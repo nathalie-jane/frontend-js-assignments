@@ -87,6 +87,7 @@ body {
 .site-nav__item {
 	width: 75%;
 	border: 1px solid #0a0a0a;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Link items */
@@ -96,6 +97,9 @@ body {
 	font-size: 1rem;
 	line-height: 1.5;
 	padding-block: 1.125rem;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 /* Default and visited link styles */
@@ -103,4 +107,10 @@ body {
 .site-nav__link:visited {
 	text-decoration: none;
 	color: #0a0a0a;
+}
+
+/* Link hover state */
+.site-nav__link:hover {
+	background-color: #0a0a0a;
+	color: #ffffff;
 }
