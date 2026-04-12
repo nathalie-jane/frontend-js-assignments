@@ -1,0 +1,31 @@
+/* ===================================
+    BASE
+    Default styles and resets
+====================================== */
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Removes default spacing */
+h1,
+p,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/* ===================================
+    PAGE
+	Global layout and typography
+====================================== */
+
+/* Base typography and page background */
+body {
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-family: "Nimbus Sans L", sans-serif;
+}
