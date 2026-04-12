@@ -28,3 +28,18 @@ body {
 	color: #0a0a0a;
 	font-family: "Inter", sans-serif;
 }
+
+/* ===================================
+    SECTION: ASSIGNMENT 01
+====================================== */
+
+/* Main page wrapper (centers content) */
+.assignment-01 {
+	min-height: 100vh;
+	max-width: 90rem;
+	width: 100%;
+	display: grid;
+	place-items: center;
+	margin-inline: auto;
+	padding-inline: 2%;
+}
