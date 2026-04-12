@@ -79,7 +79,7 @@ body {
 
 /* ===================================
     COMPONENT: CALCULATOR
-    Layout and structure
+    Form layout and structure
 ====================================== */
 
 /* Calculator wrapper (vertical layout and spacing) */
@@ -106,9 +106,23 @@ body {
 .calculator__input {
 	width: 100%;
 	padding: 12px;
-	font-size: 1rem;
+	font-size: 16px;
 	line-height: 1.6;
 	color: #0a0a0a;
+	border: 1px solid #767676;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Placeholder styling */
+.calculator__input::placeholder {
+	font-size: 16px;
+	line-height: 1.6;
+	color: rgba(10, 10, 10, 0.5);
+}
+
+/* Input focus state styling */
+.calculator__input:focus {
+	outline: 1px solid #0a0a0a;
 }
 
 /* Hide placeholder on focus */
@@ -126,7 +140,26 @@ body {
 /* Action buttons */
 .calculator__btn {
 	padding: 12px 24px;
-	font-size: 1rem;
+	font-size: 16px;
 	line-height: 1.5;
 	color: #0a0a0a;
+	border: 1px solid #767676;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+	background-color: transparent;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* Hover and active states */
+.calculator__btn:hover,
+.calculator__btn:active {
+	background-color: #0a0a0a;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+/* Button feedback effect on click */
+.calculator__btn:active {
+	transform: scale(0.95);
 }
