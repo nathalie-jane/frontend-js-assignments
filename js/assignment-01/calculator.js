@@ -19,11 +19,19 @@ const outputResult = document.getElementById("calculator__output");
 /* ====================================================
 	FUNCTION: Input conversion
 	Convert input values from strings to numbers
+    Return both converted numbers as an object
 ======================================================= */
 
 function convertInputToNumber() {
-	const convertInput1 = inputValue1.valueAsNumber;
-	const convertInput2 = inputValue2.valueAsNumber;
+	const inputNumber1 = inputValue1.valueAsNumber;
+	const inputNumber2 = inputValue2.valueAsNumber;
+
+	const convertedInputs = {
+		number1: inputNumber1,
+		number2: inputNumber2,
+	};
+
+	return convertedInputs;
 }
 
 /* ====================================================
