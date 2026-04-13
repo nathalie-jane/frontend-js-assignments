@@ -87,8 +87,15 @@ function displayError(message) {
 
 function handleAddButtonClick() {
 	const convertedValue = convertInputToNumber();
-	const result = calculateAddition(convertedValue.number1, convertedValue.number2);
-	displayResult(result);
+
+	if (Number.isNaN(convertedValue.number1) || Number.isNaN(convertedValue.number2)) {
+		displayError("Enter a valid number");
+		console.log("Enter a valid number");
+		return;
+	} else {
+		const result = calculateAddition(convertedValue.number1, convertedValue.number2);
+		displayResult(result);
+	}
 }
 
 /* ====================================================
