@@ -17,6 +17,16 @@ const divideButton = document.getElementById("btn__divide");
 const outputResult = document.getElementById("calculator__output");
 
 /* ====================================================
+	FUNCTION: Input conversion
+	Convert input values from strings to numbers
+======================================================= */
+
+function convertInputToNumber() {
+	const convertInput1 = inputValue1.valueAsNumber;
+	const convertInput2 = inputValue2.valueAsNumber;
+}
+
+/* ====================================================
     FUNCTIONS: Arithmetic operations
 	Perform calculations and return the result
 ======================================================= */
