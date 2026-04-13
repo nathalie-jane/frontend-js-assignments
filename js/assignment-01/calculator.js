@@ -36,22 +36,27 @@ function convertInputToNumber() {
 
 /* ====================================================
     FUNCTIONS: Arithmetic operations
-	Perform calculations and return the result
+	Perform calculations, log operation and result to
+    console, return calculated result
 ======================================================= */
 
 function calculateAddition(number1, number2) {
+	console.log(`${inputValue1.valueAsNumber} + ${inputValue2.valueAsNumber} = ${number1 + number2}`);
 	return number1 + number2;
 }
 
 function calculateSubtraction(number1, number2) {
+	console.log(`${inputValue1.valueAsNumber} - ${inputValue2.valueAsNumber} = ${number1 - number2}`);
 	return number1 - number2;
 }
 
 function calculateMultiplication(number1, number2) {
+	console.log(`${inputValue1.valueAsNumber} * ${inputValue2.valueAsNumber} = ${number1 * number2}`);
 	return number1 * number2;
 }
 
 function calculateDivision(number1, number2) {
+	console.log(`${inputValue1.valueAsNumber} / ${inputValue2.valueAsNumber} = ${number1 / number2}`);
 	return number1 / number2;
 }
 
@@ -73,3 +78,23 @@ function displayResult(result) {
 function displayError(message) {
 	outputResult.textContent = `Error: ${message}`;
 }
+
+/* ====================================================
+    FUNCTION: Handle Add Button Click
+    Get converted input values, perform addition and
+    display result	
+======================================================= */
+
+function handleAddButtonClick() {
+	const convertedValue = convertInputToNumber();
+	const result = calculateAddition(convertedValue.number1, convertedValue.number2);
+	displayResult(result);
+}
+
+/* ====================================================
+    EVENT HANDLERS
+    Connect action buttons to their respective
+    functions to perform calculations on click
+======================================================= */
+
+addButton.addEventListener("click", handleAddButtonClick);
