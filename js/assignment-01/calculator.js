@@ -54,3 +54,22 @@ function calculateMultiplication(number1, number2) {
 function calculateDivision(number1, number2) {
 	return number1 / number2;
 }
+
+/* ====================================================
+    FUNCTION: Display result
+	Calculated result is displayed in the output field
+======================================================= */
+
+function displayResult(result) {
+	outputResult.textContent = `Result: ${result}`;
+}
+
+/* ====================================================
+    FUNCTION: Display error message
+	Error message is displayed in the output field if
+	input is invalid	
+======================================================= */
+
+function displayError(message) {
+	outputResult.textContent = `Error: ${message}`;
+}
