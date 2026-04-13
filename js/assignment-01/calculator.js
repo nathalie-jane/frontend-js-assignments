@@ -80,9 +80,9 @@ function displayError(message) {
 }
 
 /* ====================================================
-    FUNCTION: Handle Add Button Click
-    Get converted input values, perform addition and
-    display result	
+    FUNCTIONS: Handle action button clicks
+    Get converted input values, perform calculations
+	and display result	
 ======================================================= */
 
 function handleAddButtonClick() {
@@ -98,6 +98,49 @@ function handleAddButtonClick() {
 	}
 }
 
+function handleSubtractButtonClick() {
+	const convertedValue = convertInputToNumber();
+
+	if (Number.isNaN(convertedValue.number1) || Number.isNaN(convertedValue.number2)) {
+		displayError("Enter a valid number");
+		console.log("Enter a valid number");
+		return;
+	} else {
+		const result = calculateSubtraction(convertedValue.number1, convertedValue.number2);
+		displayResult(result);
+	}
+}
+
+function handleMultiplyButtonClick() {
+	const convertedValue = convertInputToNumber();
+
+	if (Number.isNaN(convertedValue.number1) || Number.isNaN(convertedValue.number2)) {
+		displayError("Enter a valid number");
+		console.log("Enter a valid number");
+		return;
+	} else {
+		const result = calculateMultiplication(convertedValue.number1, convertedValue.number2);
+		displayResult(result);
+	}
+}
+
+function handleDivideButtonClick() {
+	const convertedValue = convertInputToNumber();
+
+	if (Number.isNaN(convertedValue.number1) || Number.isNaN(convertedValue.number2)) {
+		displayError("Enter a valid number");
+		console.log("Enter a valid number");
+		return;
+	} else if ((convertedValue.number1 === 0 && convertedValue.number2 === 0) || convertedValue.number2 === 0) {
+		displayError("Undefined");
+		console.log("Undefined");
+		return;
+	} else {
+		const result = calculateDivision(convertedValue.number1, convertedValue.number2);
+		displayResult(result);
+	}
+}
+
 /* ====================================================
     EVENT HANDLERS
     Connect action buttons to their respective
@@ -105,3 +148,6 @@ function handleAddButtonClick() {
 ======================================================= */
 
 addButton.addEventListener("click", handleAddButtonClick);
+subtractButton.addEventListener("click", handleSubtractButtonClick);
+multiplyButton.addEventListener("click", handleMultiplyButtonClick);
+divideButton.addEventListener("click", handleDivideButtonClick);
