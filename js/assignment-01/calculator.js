@@ -15,3 +15,24 @@ const divideButton = document.getElementById("btn__divide");
 
 // Output field
 const outputResult = document.getElementById("calculator__output");
+
+/* ====================================================
+    FUNCTIONS: Arithmetic operations
+	Perform calculations and return the result
+======================================================= */
+
+function calculateAddition(number1, number2) {
+	return number1 + number2;
+}
+
+function calculateSubtraction(number1, number2) {
+	return number1 - number2;
+}
+
+function calculateMultiplication(number1, number2) {
+	return number1 * number2;
+}
+
+function calculateDivision(number1, number2) {
+	return number1 / number2;
+}
