@@ -1,3 +1,8 @@
+/* ======================================
+    LAYOUT: ASSIGNMENT PAGES
+    Main page structure and containers
+========================================= */
+
 /* Main page wrapper (centers content) */
 .page-assignment {
 	min-height: 100vh;
@@ -9,6 +14,7 @@
 	padding-inline: 2%;
 }
 
+/* Assignment container (controls width and vertical alignment) */
 .assignment {
 	max-width: 28rem;
 	width: 100%;
@@ -29,20 +35,4 @@
 /* Text wrapper */
 .assignment__info {
 	text-align: center;
-}
-
-/* Page title */
-.assignment__title {
-	margin-bottom: 16px;
-	font-size: 2rem;
-	line-height: 1.3;
-	font-weight: 500;
-}
-
-/* Supporting text */
-.assignment__text {
-	margin-bottom: 16px;
-	font-size: 0.875rem;
-	line-height: 1.6;
-	color: #4a5565;
 }
