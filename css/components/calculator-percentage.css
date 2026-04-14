@@ -1,1 +1,17 @@
+/* ===================================
+    COMPONENT: PERCENTAGE CALCULATOR
+    Button layout and styles
+====================================== */
 
+/* Display buttons in a 2-column grid */
+.calculator__actions--grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+}
+
+/* Action buttons styling */
+.calculator__btn--percentage {
+	border-radius: 0;
+	font-size: 0.875rem;
+}

@@ -31,6 +31,39 @@
 					<!-- Supporting text -->
 					<p class="assignment__text">Check the console for output</p>
 				</div>
+				<!-- =================================
+				        CALCULATOR
+                        Percentage calculator
+			    ====================================== -->
+				<form class="calculator calculator--percentage">
+					<!-- Input fields -->
+					<div class="calculator__fields">
+						<!-- First number input -->
+						<input
+							class="calculator__input"
+							type="number"
+							id="calculator__input--first"
+							placeholder="Enter percentage or first number"
+							required />
+						<!-- Second number input -->
+						<input
+							class="calculator__input"
+							type="number"
+							id="calculator__input--second"
+							placeholder="Enter number"
+							required />
+					</div>
+					<!-- Action buttons -->
+					<div class="calculator__actions calculator__actions--grid">
+						<button class="calculator__btn calculator__btn--percentage" type="button">X% of Y</button>
+						<button class="calculator__btn calculator__btn--percentage" type="button">X is what % of Y</button>
+						<button class="calculator__btn calculator__btn--percentage" type="button">Increase by X%</button>
+						<button class="calculator__btn calculator__btn--percentage" type="button">Decrease by X%</button>
+					</div>
+					<!-- Result box (hidden by default) -->
+					<p class="calculator__output" id="calculator__output"></p>
+				</form>
+				<!-- END Percentage Calculator -->
 			</section>
 			<!-- END Section: Assignment 02 -->
 			<!-- Back link navigation -->
