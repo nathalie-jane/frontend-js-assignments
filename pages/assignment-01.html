@@ -23,7 +23,7 @@
 		<script src="../js/assignment-01/exercises.js" defer></script>
 
 		<!-- Calculator JS -->
-		<script src="../js/assignment-01/calculator.js" defer></script>
+		<script src="../js/assignment-01/calculator-arithmetic.js" defer></script>
 
 		<!-- Icons: FontAwesome -->
 		<script src="https://kit.fontawesome.com/e75678fef9.js" crossorigin="anonymous"></script>
@@ -32,71 +32,69 @@
 		<link rel="stylesheet" href="../css/main.css" />
 	</head>
 	<body>
-		<main>
+		<!-- Main wrapper -->
+		<main class="page-assignment">
 			<!-- ==============================
 				    SECTION: ASSIGNMENT 01
 			=================================== -->
-			<!-- Main wrapper -->
-			<section class="assignment">
-				<!-- Inner wrapper -->
-				<div class="assignment__inner assignment__inner--01">
-					<!-- Intro text block -->
-					<div class="assignment__info">
-						<!-- Page title -->
-						<h1 class="assignment__title">Assignment 01</h1>
-						<!-- Supporting text -->
-						<p class="assignment__text">Check the console for output</p>
-					</div>
-					<!-- =================================
-				            CALCULATOR
-                            Basic arithmetic calculator
-			        ====================================== -->
-					<form class="calculator">
-						<!-- Input fields -->
-						<div class="calculator__fields">
-							<!-- First number input -->
-							<input
-								class="calculator__input"
-								type="number"
-								id="calculator__input--01"
-								placeholder="Enter first number"
-								required />
-							<!-- Second number input -->
-							<input
-								class="calculator__input"
-								type="number"
-								id="calculator__input--02"
-								placeholder="Enter second number"
-								required />
-						</div>
-						<!-- Action buttons -->
-						<div class="calculator__actions">
-							<!-- Add button -->
-							<button class="calculator__btn" id="btn__add" type="button">
-								<i class="fa-solid fa-plus"></i>
-							</button>
-							<!-- Subtract button -->
-							<button class="calculator__btn" id="btn__subtract" type="button">
-								<i class="fa-solid fa-minus"></i>
-							</button>
-							<!-- Multiply button -->
-							<button class="calculator__btn" id="btn__multiply" type="button">
-								<i class="fa-solid fa-xmark"></i>
-							</button>
-							<!-- Divide button -->
-							<button class="calculator__btn" id="btn__divide" type="button">
-								<i class="fa-solid fa-divide"></i>
-							</button>
-						</div>
-						<!-- Result box -->
-						<p class="calculator__output" id="calculator__output"></p>
-					</form>
-					<!-- END Calculator -->
+			<!-- Inner wrapper -->
+			<section class="assignment assignment--one">
+				<!-- Intro text block -->
+				<div class="assignment__info">
+					<!-- Page title -->
+					<h1 class="assignment__title">Assignment 01</h1>
+					<!-- Supporting text -->
+					<p class="assignment__text">Check the console for output</p>
 				</div>
-				<!-- Back link navigation -->
-				<a class="back-link" href="../index.html">← Back to Home</a>
+				<!-- =================================
+				        CALCULATOR
+                        Basic arithmetic calculator
+			    ====================================== -->
+				<form class="calculator calculator--arithmetic">
+					<!-- Input fields -->
+					<div class="calculator__fields">
+						<!-- First number input -->
+						<input
+							class="calculator__input"
+							type="number"
+							id="calculator__input--first"
+							placeholder="Enter first number"
+							required />
+						<!-- Second number input -->
+						<input
+							class="calculator__input"
+							type="number"
+							id="calculator__input--second"
+							placeholder="Enter second number"
+							required />
+					</div>
+					<!-- Action buttons -->
+					<div class="calculator__actions">
+						<!-- Add button -->
+						<button class="calculator__btn calculator__btn--arithmetic" id="btn__add" type="button">
+							<i class="fa-solid fa-plus"></i>
+						</button>
+						<!-- Subtract button -->
+						<button class="calculator__btn calculator__btn--arithmetic" id="btn__subtract" type="button">
+							<i class="fa-solid fa-minus"></i>
+						</button>
+						<!-- Multiply button -->
+						<button class="calculator__btn calculator__btn--arithmetic" id="btn__multiply" type="button">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+						<!-- Divide button -->
+						<button class="calculator__btn calculator__btn--arithmetic" id="btn__divide" type="button">
+							<i class="fa-solid fa-divide"></i>
+						</button>
+					</div>
+					<!-- Result box (hidden by default) -->
+					<p class="calculator__output" id="calculator__output"></p>
+				</form>
+				<!-- END Calculator -->
 			</section>
 			<!-- END Section: Assignment 01 -->
+			<!-- Back link navigation -->
+			<a class="assignment__back-link" href="../index.html">← Back to Home</a>
 		</main>
 	</body>
 </html>

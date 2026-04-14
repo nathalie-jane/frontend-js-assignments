@@ -70,8 +70,8 @@
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 	background-color: rgba(203, 207, 210, 0.5);
 	transition:
-		background-color 0.3s ease,
-		color 0.3s ease;
+		background-color 0.2s ease,
+		color 0.2s ease;
 }
 
 /* Hover and active states */

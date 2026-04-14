@@ -4,7 +4,8 @@
 ====================================== */
 
 /* Back link styling */
-.back-link {
+.assignment__back-link {
+	align-self: center;
 	padding: 12px 32px;
 	border: 1px solid #0a0a0a;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -16,14 +17,14 @@
 }
 
 /* Removes default link styles */
-.back-link,
-.back-link:visited {
+.assignment__back-link,
+.assignment__back-link:visited {
 	text-decoration: none;
 	color: #0a0a0a;
 }
 
 /* Hover state */
-.back-link:hover {
+.assignment__back-link:hover {
 	background-color: #0a0a0a;
 	color: #ffffff;
 }

@@ -3,14 +3,9 @@
     Layout and structure
 ====================================== */
 
-/* Inner container (controls content width and spacing) */
-.assignment__inner--01 {
+/* Inner container (controls content width and height) */
+.assignment--one {
 	max-width: 28rem;
 	width: 100%;
 	min-height: 21rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	align-self: end;
-	padding-inline: 24px;
 }

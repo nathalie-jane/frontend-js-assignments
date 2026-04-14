@@ -11,8 +11,8 @@
 ------------------------------------------------------- */
 
 // Input fields
-const inputValue1 = document.getElementById("calculator__input--01");
-const inputValue2 = document.getElementById("calculator__input--02");
+const inputValue1 = document.getElementById("calculator__input--first");
+const inputValue2 = document.getElementById("calculator__input--second");
 
 // Action buttons
 const addButton = document.getElementById("btn__add");
