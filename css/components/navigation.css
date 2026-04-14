@@ -1,0 +1,51 @@
+/* ===================================
+    NAVIGATION
+	Lists links to assignment pages
+====================================== */
+
+/* Navigation wrapper */
+.site-nav {
+	width: 100%;
+}
+
+/* Vertical list of links */
+.site-nav__list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	list-style-type: none;
+}
+
+/* Link container */
+.site-nav__item {
+	width: 75%;
+	border: 1px solid #0a0a0a;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Link items */
+.site-nav__link {
+	display: block;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 1.5;
+	padding-block: 1.125rem;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* Default and visited link styles */
+.site-nav__link,
+.site-nav__link:visited {
+	text-decoration: none;
+	color: #0a0a0a;
+}
+
+/* Link hover state */
+.site-nav__link:hover {
+	background-color: #0a0a0a;
+	color: #ffffff;
+}

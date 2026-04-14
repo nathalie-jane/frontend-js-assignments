@@ -1,0 +1,29 @@
+/* ===================================
+    COMPONENT: BACK LINK
+    Navigation back to homepage
+====================================== */
+
+/* Back link styling */
+.back-link {
+	padding: 12px 32px;
+	border: 1px solid #0a0a0a;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	font-size: 1rem;
+	line-height: 1.5;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+/* Removes default link styles */
+.back-link,
+.back-link:visited {
+	text-decoration: none;
+	color: #0a0a0a;
+}
+
+/* Hover state */
+.back-link:hover {
+	background-color: #0a0a0a;
+	color: #ffffff;
+}

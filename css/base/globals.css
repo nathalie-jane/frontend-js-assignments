@@ -12,7 +12,8 @@
 
 /* Removes default spacing */
 h1,
-p {
+p,
+ul {
 	margin: 0;
 	padding: 0;
 }
@@ -26,5 +27,5 @@ p {
 body {
 	background-color: #ffffff;
 	color: #0a0a0a;
-	font-family: "Inter", sans-serif;
+	font-family: "Nimbus Sans L", sans-serif;
 }
