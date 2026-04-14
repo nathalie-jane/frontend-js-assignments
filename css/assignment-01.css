@@ -166,7 +166,7 @@ body {
 	transform: scale(0.95);
 }
 
-/* Output box hidden by default */
+/* Result box hidden by default */
 .calculator__output {
 	display: none;
 	width: 100%;
@@ -178,6 +178,11 @@ body {
 	color: #4a5565;
 	background-color: rgba(203, 207, 210, 0.2);
 	text-align: center;
+}
+
+/* Result box visible state */
+.calculator__output--visible {
+	display: block;
 }
 
 /* ===================================
