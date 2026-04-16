@@ -24,7 +24,7 @@ const divideButton = document.getElementById("btn__divide");
 const outputResult = document.getElementById("calculator__output");
 
 /* ----------------------------------------------------
-	FUNCTION: Input conversion
+	INPUT HANDLING
 	- Convert input values from strings to numbers
     - Return both converted numbers as an object
 ------------------------------------------------------- */
@@ -42,8 +42,8 @@ function convertInputToNumber() {
 }
 
 /* ----------------------------------------------------
-    FUNCTIONS: Arithmetic operations
-	- Perform calculations
+    ARITHMETIC OPERATIONS
+	- Perform basic arithmetic operations
 	- Log operation and result to console
 	- Return calculated result
 ------------------------------------------------------- */
@@ -69,30 +69,21 @@ function calculateDivision(number1, number2) {
 }
 
 /* ----------------------------------------------------
-    FUNCTION: Display output field in UI
-	- Add CSS class to output element to make it 
-	visible
+    UI OUTPUT
+	- Add CSS class to output element
+	- Display calculated result in output field
+	- Error message is displayed in output field if 
+	input is invalid
 ------------------------------------------------------- */
 
 function showOutput() {
 	outputResult.classList.add("calculator__output--visible");
 }
 
-/* ----------------------------------------------------
-    FUNCTION: Display result
-	- Display calculated result in output field
-------------------------------------------------------- */
-
 function displayResult(result) {
 	outputResult.textContent = `Result: ${result}`;
 	showOutput();
 }
-
-/* ----------------------------------------------------
-    FUNCTION: Display error message
-	- Error message is displayed in output field if 
-	input is invalid	
-------------------------------------------------------- */
 
 function displayError(message) {
 	outputResult.textContent = `Error: ${message}`;
@@ -100,76 +91,54 @@ function displayError(message) {
 }
 
 /* ----------------------------------------------------
-    FUNCTIONS: Handle action button clicks
+    RUN CALCULATIONS
     - Get converted input values
 	- Validate inputs and display error if invalid
 	- Perform calculations and display result	
 ------------------------------------------------------- */
 
-function handleAddButtonClick() {
+function performCalculations(arithmeticOperation) {
 	const convertedInputs = convertInputToNumber();
 
 	if (Number.isNaN(convertedInputs.number1) || Number.isNaN(convertedInputs.number2)) {
 		displayError("Enter a valid number");
-		console.log("Enter a valid number");
 		return;
 	}
 
-	const result = calculateAddition(convertedInputs.number1, convertedInputs.number2);
-	displayResult(result);
-}
+	let result;
 
-function handleSubtractButtonClick() {
-	const convertedInputs = convertInputToNumber();
-
-	if (Number.isNaN(convertedInputs.number1) || Number.isNaN(convertedInputs.number2)) {
-		displayError("Enter a valid number");
-		console.log("Enter a valid number");
-		return;
+	if (arithmeticOperation === "add") {
+		result = calculateAddition(convertedInputs.number1, convertedInputs.number2);
+	} else if (arithmeticOperation === "subtract") {
+		result = calculateSubtraction(convertedInputs.number1, convertedInputs.number2);
+	} else if (arithmeticOperation === "multiply") {
+		result = calculateMultiplication(convertedInputs.number1, convertedInputs.number2);
+	} else if (arithmeticOperation === "divide") {
+		if (convertedInputs.number2 === 0) {
+			displayError("Cannot divide by zero");
+			return;
+		} else {
+			result = calculateDivision(convertedInputs.number1, convertedInputs.number2);
+		}
 	}
-
-	const result = calculateSubtraction(convertedInputs.number1, convertedInputs.number2);
-	displayResult(result);
-}
-
-function handleMultiplyButtonClick() {
-	const convertedInputs = convertInputToNumber();
-
-	if (Number.isNaN(convertedInputs.number1) || Number.isNaN(convertedInputs.number2)) {
-		displayError("Enter a valid number");
-		console.log("Enter a valid number");
-		return;
-	}
-
-	const result = calculateMultiplication(convertedInputs.number1, convertedInputs.number2);
-	displayResult(result);
-}
-
-function handleDivideButtonClick() {
-	const convertedInputs = convertInputToNumber();
-
-	if (Number.isNaN(convertedInputs.number1) || Number.isNaN(convertedInputs.number2)) {
-		displayError("Enter a valid number");
-		console.log("Enter a valid number");
-		return;
-	}
-	if (convertedInputs.number2 === 0) {
-		displayError("Cannot divide by zero");
-		console.log("Cannot divide by zero");
-		return;
-	}
-
-	const result = calculateDivision(convertedInputs.number1, convertedInputs.number2);
 	displayResult(result);
 }
 
 /* ----------------------------------------------------
-    EVENT LISTENERS: Button clicks
+    EVENTS
     - Connect action buttons to their respective
     functions to perform calculations on click
 ------------------------------------------------------- */
 
-addButton.addEventListener("click", handleAddButtonClick);
-subtractButton.addEventListener("click", handleSubtractButtonClick);
-multiplyButton.addEventListener("click", handleMultiplyButtonClick);
-divideButton.addEventListener("click", handleDivideButtonClick);
+addButton.addEventListener("click", function () {
+	performCalculations("add");
+});
+subtractButton.addEventListener("click", function () {
+	performCalculations("subtract");
+});
+multiplyButton.addEventListener("click", function () {
+	performCalculations("multiply");
+});
+divideButton.addEventListener("click", function () {
+	performCalculations("divide");
+});
