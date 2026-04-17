@@ -7,21 +7,27 @@
 
 /* ----------------------------------------------------
     DOM SELECTORS
-    - Store references to DOM elements in variables
+    - Connect JS to HTML
+	- Inputs and buttons are grouped as objects
+	with properties
 ------------------------------------------------------- */
 
-// Input fields
-const inputValue1 = document.getElementById("calculator__input--first");
-const inputValue2 = document.getElementById("calculator__input--second");
+// Inputs
+const inputValues = {
+	value1: document.getElementById("calculator-input-first"),
+	value2: document.getElementById("calculator-input-second"),
+};
 
 // Action buttons
-const addButton = document.getElementById("btn__add");
-const subtractButton = document.getElementById("btn__subtract");
-const multiplyButton = document.getElementById("btn__multiply");
-const divideButton = document.getElementById("btn__divide");
+const buttons = {
+	addButton: document.getElementById("btn-add"),
+	subtractButton: document.getElementById("btn-subtract"),
+	multiplyButton: document.getElementById("btn-multiply"),
+	divideButton: document.getElementById("btn-divide"),
+};
 
-// Output field
-const outputResult = document.getElementById("calculator__output");
+// Output
+const outputResult = document.getElementById("result-output");
 
 /* ----------------------------------------------------
 	INPUT HANDLING
@@ -30,8 +36,8 @@ const outputResult = document.getElementById("calculator__output");
 ------------------------------------------------------- */
 
 function convertInputToNumber() {
-	const inputNumber1 = inputValue1.valueAsNumber;
-	const inputNumber2 = inputValue2.valueAsNumber;
+	const inputNumber1 = inputValues.value1.valueAsNumber;
+	const inputNumber2 = inputValues.value2.valueAsNumber;
 
 	const convertedInputs = {
 		number1: inputNumber1,
@@ -101,6 +107,7 @@ function performCalculations(arithmeticOperation) {
 	const convertedInputs = convertInputToNumber();
 
 	if (Number.isNaN(convertedInputs.number1) || Number.isNaN(convertedInputs.number2)) {
+		console.log("Error: Enter a valid number");
 		displayError("Enter a valid number");
 		return;
 	}
@@ -115,6 +122,7 @@ function performCalculations(arithmeticOperation) {
 		result = calculateMultiplication(convertedInputs.number1, convertedInputs.number2);
 	} else if (arithmeticOperation === "divide") {
 		if (convertedInputs.number2 === 0) {
+			console.log("Error: Cannot divide by zero");
 			displayError("Cannot divide by zero");
 			return;
 		} else {
@@ -130,15 +138,15 @@ function performCalculations(arithmeticOperation) {
     functions to perform calculations on click
 ------------------------------------------------------- */
 
-addButton.addEventListener("click", function () {
+buttons.addButton.addEventListener("click", function () {
 	performCalculations("add");
 });
-subtractButton.addEventListener("click", function () {
+buttons.subtractButton.addEventListener("click", function () {
 	performCalculations("subtract");
 });
-multiplyButton.addEventListener("click", function () {
+buttons.multiplyButton.addEventListener("click", function () {
 	performCalculations("multiply");
 });
-divideButton.addEventListener("click", function () {
+buttons.divideButton.addEventListener("click", function () {
 	performCalculations("divide");
 });

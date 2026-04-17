@@ -34,5 +34,6 @@
 
 /* Text wrapper */
 .assignment__info {
+	margin-bottom: 40px;
 	text-align: center;
 }

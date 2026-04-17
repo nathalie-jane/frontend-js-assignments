@@ -1,5 +1,6 @@
 @import url(../css/base/globals.css);
 @import url(../css/base/normalize.css);
+@import url(../css/base/typography.css);
 
 @import url(../css/components/back-link.css);
 @import url(../css/components/calculator-arithmetic.css);

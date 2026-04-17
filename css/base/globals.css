@@ -12,6 +12,7 @@
 
 /* Removes default spacing */
 h1,
+h2,
 p,
 ul {
 	margin: 0;
@@ -27,5 +28,6 @@ ul {
 body {
 	background-color: #ffffff;
 	color: #0a0a0a;
-	font-family: "Nimbus Sans L", sans-serif;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
 }

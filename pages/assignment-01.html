@@ -16,8 +16,12 @@
 			property="og:description"
 			content="JavaScript assignment covering basic concepts like variables and operators, with an added mini calculator to make arithmetic operations more interactive." />
 
-		<!-- Font: "Nimbus Sans L" -->
-		<link href="https://fonts.cdnfonts.com/css/nimbus-sans-l" rel="stylesheet" />
+		<!-- Font: "Roboto" -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
 
 		<!-- Assignment 01 JS -->
 		<script src="../js/assignment-01/exercises.js" defer></script>
@@ -50,6 +54,7 @@
 				        CALCULATOR
                         Basic arithmetic calculator
 			    ====================================== -->
+				<h2 class="project__title">Basic calculator</h2>
 				<form class="calculator calculator--arithmetic">
 					<!-- Input fields -->
 					<div class="calculator__fields">
@@ -57,38 +62,38 @@
 						<input
 							class="calculator__input"
 							type="number"
-							id="calculator__input--first"
+							id="calculator-input-first"
 							placeholder="Enter first number"
 							required />
 						<!-- Second number input -->
 						<input
 							class="calculator__input"
 							type="number"
-							id="calculator__input--second"
+							id="calculator-input-second"
 							placeholder="Enter second number"
 							required />
 					</div>
 					<!-- Action buttons -->
 					<div class="calculator__actions">
 						<!-- Add button -->
-						<button class="calculator__btn calculator__btn--arithmetic" id="btn__add" type="button">
+						<button class="calculator__btn calculator__btn" id="btn-add" type="button">
 							<i class="fa-solid fa-plus"></i>
 						</button>
 						<!-- Subtract button -->
-						<button class="calculator__btn calculator__btn--arithmetic" id="btn__subtract" type="button">
+						<button class="calculator__btn calculator__btn" id="btn-subtract" type="button">
 							<i class="fa-solid fa-minus"></i>
 						</button>
 						<!-- Multiply button -->
-						<button class="calculator__btn calculator__btn--arithmetic" id="btn__multiply" type="button">
+						<button class="calculator__btn calculator__btn" id="btn-multiply" type="button">
 							<i class="fa-solid fa-xmark"></i>
 						</button>
 						<!-- Divide button -->
-						<button class="calculator__btn calculator__btn--arithmetic" id="btn__divide" type="button">
+						<button class="calculator__btn calculator__btn" id="btn-divide" type="button">
 							<i class="fa-solid fa-divide"></i>
 						</button>
 					</div>
 					<!-- Result box (hidden by default) -->
-					<p class="calculator__output" id="calculator__output"></p>
+					<p class="calculator__output" id="result-output"></p>
 				</form>
 				<!-- END Calculator -->
 			</section>
