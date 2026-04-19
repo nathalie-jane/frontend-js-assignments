@@ -1,5 +1,5 @@
 /* ====================================================
-	CALCULATOR: Basic arithmetic calculator
+	BASIC ARITHMETIC CALCULATOR
 	- Collects and converts user input
 	- Performs calculations based on button clicks
 	- Displays results or error messages in the UI
@@ -7,7 +7,7 @@
 
 /* ----------------------------------------------------
     DOM SELECTORS
-    - Connect JS to HTML
+    - Connect JS to HTML elements
 	- Inputs and buttons are grouped as objects
 	with properties
 ------------------------------------------------------- */
