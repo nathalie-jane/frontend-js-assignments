@@ -1,5 +1,7 @@
 <!-- ========================================
 		PAGE: JavaScript Assignments | 02
+		JS exercises with an addtional
+		word counter mini-project
 ============================================= -->
 
 <!doctype html>
@@ -28,6 +30,9 @@
 		<!-- Assignment 02 JS -->
 		<script src="../js/assignment-02/exercises.js" defer></script>
 
+		<!-- Word Counter JS -->
+		<script src="../js/assignment-02/word-counter.js" defer></script>
+
 		<!-- Main stylesheet -->
 		<link rel="stylesheet" href="../css/main.css" />
 	</head>
@@ -49,6 +54,29 @@
 					<!-- Supporting text -->
 					<p class="assignment__text">Check the console for output</p>
 				</div>
+				<!-- =================================
+				        COMPONENT: WORD COUNTER
+                        Real-time word counter
+			    ====================================== -->
+				<div class="project project--word-counter">
+					<!-- Project title -->
+					<h2 class="project__title">Word counter</h2>
+					<!-- Word counter wrapper -->
+					<div class="word-counter">
+						<!-- User input field -->
+						<textarea
+							class="word-counter__input"
+							id="word-counter-input"
+							rows="8"
+							placeholder="Start typing here..."></textarea>
+						<!-- Output display -->
+						<div class="word-counter__output">
+							<p class="word-counter__label">Words</p>
+							<p class="word-counter__value" id="word-counter-value">0</p>
+						</div>
+					</div>
+				</div>
+				<!-- END Word Counter -->
 			</section>
 			<!-- END Section: Assignment 02 -->
 			<!-- Back link navigation -->
