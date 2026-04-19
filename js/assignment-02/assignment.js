@@ -1,7 +1,7 @@
 /* =======================================================
     LESSON 02: KEYWORDS, STRING METHODS AND PARSE
 
-    EXERCISE: Discount calculation
+    ASSIGNMENT: Discount calculation
     - Ask user for price that includes "$"-sign
     - Validate user input
     - Apply a 10% discount

@@ -33,8 +33,13 @@ function processText(text) {
 
 function extractWords(textToWords) {
 	textToWords = processText();
-	const words = textToWords.length;
-	return words;
+
+	if (textToWords === null) {
+		return 0;
+	} else {
+		const words = textToWords.length;
+		return words;
+	}
 }
 
 /* ----------------------------------------------------
@@ -53,3 +58,14 @@ function wordCounter(numberOfWords) {
 		wordCounterValue.textContent = `${numberOfWords}`;
 	}
 }
+
+/* ----------------------------------------------------
+    EVENTS
+    - Detect typing in input field
+    - Update word count when user starts typing
+------------------------------------------------------- */
+
+wordInputElement.addEventListener("input", function () {
+	const numberOfWords = extractWords();
+	wordCounter(numberOfWords);
+});
