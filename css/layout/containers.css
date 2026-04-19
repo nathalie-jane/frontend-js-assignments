@@ -34,6 +34,13 @@
 
 /* Text wrapper */
 .assignment__info {
-	margin-bottom: 40px;
+	margin-bottom: 46px;
 	text-align: center;
+}
+
+.project {
+	width: 100%;
+	display: grid;
+	justify-items: center;
+	margin-bottom: 36px;
 }

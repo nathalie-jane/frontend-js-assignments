@@ -1,19 +1,20 @@
 /* ===================================
     TYPOGRAPHY
-	Headings and supporting text
+	Shared text styles
 ====================================== */
 
-/* Landing page title */
+/* Main title on landing page */
 .assignments__title {
 	margin-block: 12px;
 	text-align: center;
 }
 
-/* Assignment page title */
+/* Main title on individual assignment pages */
 .assignment__title {
 	margin-bottom: 16px;
 }
 
+/* Shared heading styles for all pages  */
 .assignments__title,
 .assignment__title {
 	font-size: 2.25rem;
@@ -22,7 +23,7 @@
 	letter-spacing: 0.05rem;
 }
 
-/* Assignment page supporting text */
+/* Supporting text on individual assignment pages */
 .assignment__text {
 	margin-bottom: 16px;
 	font-size: 1rem;
@@ -32,9 +33,12 @@
 	color: #4a5565;
 }
 
+/* Title for individual projects */
 .project__title {
+	margin-bottom: 12px;
 	font-size: 1.375rem;
 	line-height: 1.7;
 	font-weight: 400;
 	letter-spacing: 0.03rem;
+	text-transform: capitalize;
 }

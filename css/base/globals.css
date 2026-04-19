@@ -1,5 +1,5 @@
 /* ===================================
-    BASE
+    GLOBALS
     Default styles and resets
 ====================================== */
 
@@ -18,11 +18,6 @@ ul {
 	margin: 0;
 	padding: 0;
 }
-
-/* ===================================
-    PAGE
-	Global layout and typography
-====================================== */
 
 /* Base typography and page background */
 body {

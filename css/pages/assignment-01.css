@@ -9,3 +9,7 @@
 	width: 100%;
 	min-height: 21rem;
 }
+
+.project--calculator {
+	padding-inline: 24px;
+}

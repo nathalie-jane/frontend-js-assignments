@@ -1,17 +1,14 @@
 /* ===================================
-    COMPONENT: CALCULATOR
-    Form layout and structure
+    COMPONENT: ARITHMETIC CALCULATOR
+    Layout and structure
 ====================================== */
 
 /* Calculator wrapper (vertical layout and spacing) */
 .calculator {
-	width: 90%;
+	width: 85%;
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	padding-top: 24px;
-	padding-inline: 8px;
-	margin-bottom: 36px;
 }
 
 /* Stacks input fields */
@@ -23,28 +20,30 @@
 	gap: 16px;
 }
 
-/* Input field styling */
+/* Input fields styling */
 .calculator__input {
 	width: 100%;
 	padding: 12px;
-	font-size: 1rem;
-	line-height: 1.6;
-	color: #0a0a0a;
 	border: 1px solid #767676;
 	border-radius: 6px;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-}
-
-/* Placeholder styling */
-.calculator__input::placeholder {
 	font-size: 1rem;
 	line-height: 1.6;
-	color: rgba(10, 10, 10, 0.5);
+	letter-spacing: 0.03rem;
+	color: #0a0a0a;
 }
 
 /* Input focus state styling */
 .calculator__input:focus {
 	outline: 1px solid #0a0a0a;
+}
+
+/* Placeholder text inside calculator inputs */
+.calculator__input::placeholder {
+	font-size: 1rem;
+	line-height: 1.6;
+	letter-spacing: 0.03rem;
+	color: rgba(10, 10, 10, 0.5);
 }
 
 /* Hide placeholder on focus */
@@ -86,21 +85,22 @@
 	transform: scale(0.95);
 }
 
-/* Result box hidden by default */
+/* Result container (hidden by default) */
 .calculator__output {
 	display: none;
 	width: 100%;
 	padding: 16px 24px;
 	border: 1px solid #767676;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+	background-color: rgba(203, 207, 210, 0.2);
 	font-size: 1rem;
 	line-height: 1.6;
+	letter-spacing: 0.03rem;
 	color: #4a5565;
-	background-color: rgba(203, 207, 210, 0.2);
 	text-align: center;
 }
 
-/* Result box visible state */
+/* Result container (visible state) */
 .calculator__output--visible {
 	display: block;
 }
