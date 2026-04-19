@@ -36,3 +36,20 @@ function extractWords(textToWords) {
 	const words = textToWords.length;
 	return words;
 }
+
+/* ----------------------------------------------------
+    UI OUTPUT
+	- Add CSS class when word count is greater than 0
+	- Remove class when count is 0 (default state)
+------------------------------------------------------- */
+
+function wordCounter(numberOfWords) {
+	if (numberOfWords > 0) {
+		wordCounterValue.classList.add("word-counter__value--active");
+		wordCounterValue.textContent = `${numberOfWords}`;
+		console.log(numberOfWords);
+	} else {
+		wordCounterValue.classList.remove("word-counter__value--active");
+		wordCounterValue.textContent = `${numberOfWords}`;
+	}
+}
