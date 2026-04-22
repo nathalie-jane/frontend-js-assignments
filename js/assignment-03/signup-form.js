@@ -34,11 +34,11 @@ const signUpMessage = document.getElementById("signup-confirmation");
 ------------------------------------------------------- */
 
 const validationPattern = {
-	username: /^[A-Za-z0-9_-]+$/,
-	passwordUppercase: /[A-Z]/,
-	passwordLowercase: /[a-z]/,
-	passwordNumber: /\d/,
-	passwordSpecialCharacter: /[!@#$%^&*?_\-]/,
+	username: /^[A-Za-z0-9_-]+$/, // Allows only letters, numbers, underscore and hyphen
+	passwordUppercase: /[A-Z]/, // At least one uppercase letter
+	passwordLowercase: /[a-z]/, // At least one lowercase letter
+	passwordNumber: /\d/, // At least one number
+	passwordSpecialCharacter: /[!@#$%^&*?_\-]/, // At least one special character
 };
 
 /* ----------------------------------------------------
@@ -88,6 +88,46 @@ function validateUsername(username) {
 }
 
 /* ----------------------------------------------------
+	VALIDATION: PASSWORD
+    - Check for whitespace characters
+    - Check length (minimum 8 characters)
+    - Validate RegEx pattern for password
+    - Display error message if invalid
+------------------------------------------------------- */
+
+function validatePassword(password) {
+	const passwordHasSpaces = password.includes(" ");
+	const passwordLength = password.length;
+	const passwordHasUppercase = validationPattern.passwordUppercase.test(password);
+	const passwordHasLowercase = validationPattern.passwordLowercase.test(password);
+	const passwordHasNumber = validationPattern.passwordNumber.test(password);
+	const passwordHasSpecialCharacters = validationPattern.passwordSpecialCharacter.test(password);
+
+	if (passwordHasSpaces) {
+		displayError(errorMessage.password, "Password cannot contain whitespace characters.");
+		console.log("Password cannot contain whitespace characters.");
+		return false;
+	}
+
+	if (passwordLength < 8) {
+		displayError(errorMessage.password, "Password must be at least 8 characters.");
+		console.log("Password must be at least 8 characters.");
+		return false;
+	}
+
+	if (!(passwordHasUppercase && passwordHasLowercase && passwordHasNumber && passwordHasSpecialCharacters)) {
+		displayError(
+			errorMessage.password,
+			"Password must include at least one uppercase letter, a lowercase letter, a number and a special character.",
+		);
+		console.log("Password must include at least one uppercase letter, a lowercase letter, a number and a special character.");
+		return false;
+	}
+
+	return true;
+}
+
+/* ----------------------------------------------------
 	EVENTS
     - Prevent default form submission
     - Run validation on submit
@@ -98,4 +138,5 @@ signUpForm.addEventListener("submit", function (event) {
 
 	const formInputs = getInputValues();
 	const isUsernameValid = validateUsername(formInputs.username);
+	const isPasswordValid = validatePassword(formInputs.password);
 });
