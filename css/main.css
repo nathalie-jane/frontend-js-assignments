@@ -1,14 +1,38 @@
-@import url(../css/base/globals.css);
-@import url(../css/base/normalize.css);
-@import url(../css/base/typography.css);
+/* ===================================
+    MAIN STYLESHEET
+    - Base styles
+    - Components
+    - Layout
+    - Pages
+====================================== */
 
-@import url(../css/components/back-link.css);
-@import url(../css/components/calculator-arithmetic.css);
+/* ----------------------
+    BASE STYLES
+------------------------- */
+@import url("../css/base/globals.css");
+@import url("../css/base/normalize.css");
+@import url("../css/base/typography.css");
+
+/* ----------------------
+    COMPONENTS
+------------------------- */
+
+@import url("../css/components/back-link.css");
+@import url("../css/components/calculator-arithmetic.css");
 @import url("../css/components/navigation.css");
 @import url("../css/components/word-counter.css");
 
-@import url(../css/layout/containers.css);
+/* ----------------------
+    LAYOUT
+------------------------- */
 
-@import url(../css/pages/assignment-01.css);
-@import url(../css/pages/assignment-02.css);
-@import url(../css/pages/index.css);
+@import url("../css/layout/containers.css");
+
+/* ----------------------
+    PAGES
+------------------------- */
+
+@import url("../css/pages/assignment-01.css");
+@import url("../css/pages/assignment-02.css");
+@import url("../css/pages/assignment-03.css");
+@import url("../css/pages/index.css");

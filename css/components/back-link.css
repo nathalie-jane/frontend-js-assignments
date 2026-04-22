@@ -9,6 +9,8 @@
 	padding: 12px 32px;
 	border: 1px solid #0a0a0a;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	background-color: #0a0a0a;
+	color: #ffffff;
 	font-size: 1rem;
 	line-height: 1.5;
 	letter-spacing: 0.03rem;
@@ -21,11 +23,10 @@
 .assignment__back-link,
 .assignment__back-link:visited {
 	text-decoration: none;
-	color: #0a0a0a;
+	color: #ffffff;
 }
 
-/* Hover state */
-.assignment__back-link:hover {
-	background-color: #0a0a0a;
-	color: #ffffff;
+/* Button feedback effect on click */
+.assignment__back-link:active {
+	transform: scale(0.95);
 }

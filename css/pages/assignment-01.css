@@ -1,15 +1,11 @@
 /* ===================================
-    SECTION: ASSIGNMENT 01
+    SECTION: PROJECT CONTAINER
     Layout and structure
 ====================================== */
 
-/* Inner container (controls content width and height) */
-.assignment--one {
-	max-width: 28rem;
+/* Size modifier for calculator component */
+.project__container--calculator {
 	width: 100%;
-	min-height: 21rem;
-}
-
-.project--calculator {
-	padding-inline: 24px;
+	max-width: 28rem;
+	min-height: 16rem;
 }

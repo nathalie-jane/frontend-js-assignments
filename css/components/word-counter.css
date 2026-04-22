@@ -14,6 +14,7 @@
 	margin-bottom: 8px;
 	padding: 12px 16px 28px 16px;
 	border: 1px solid #0a0a0a;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 	resize: none;
 	color: rgba(10, 10, 10, 0.5);
 }
@@ -44,7 +45,6 @@
 	font-size: 1.375rem;
 	line-height: 1.4;
 	letter-spacing: 0.03rem;
-	color: #0a0a0a;
 }
 
 /* Label for word counter */
@@ -65,4 +65,5 @@
 	gap: 4px;
 	background-color: #f9fafb;
 	border: 1px solid #0a0a0a;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }

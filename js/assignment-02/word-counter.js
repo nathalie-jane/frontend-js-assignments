@@ -16,7 +16,8 @@ const wordCounterValue = document.getElementById("word-counter-value");
 /* ----------------------------------------------------
 	INPUT HANDLING
 	- Get user input
-    - Process text and extract words using RegEx
+    - Process text: remove spaces at start and end, 
+	extract words using RegEx
     - Return total word count
 ------------------------------------------------------- */
 

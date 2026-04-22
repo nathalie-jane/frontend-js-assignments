@@ -1,15 +1,11 @@
 /* ===================================
-    SECTION: ASSIGNMENT 02
+    SECTION: PROJECT CONTAINER
     Layout and structure
 ====================================== */
 
-/* Inner container (controls content width and height) */
-.assignment--two {
-	max-width: 32rem;
+/* Size modifier for word counter component */
+.project__container--word-counter {
 	width: 100%;
-	min-height: 28rem;
-}
-
-.project--word-counter {
-	padding-inline: 28px;
+	max-width: 30rem;
+	min-height: 24rem;
 }

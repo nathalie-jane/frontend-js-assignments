@@ -16,10 +16,9 @@
 
 /* Assignment container (controls width and vertical alignment) */
 .assignment {
-	max-width: 28rem;
 	width: 100%;
-	min-height: 21rem;
-	align-self: end;
+	display: grid;
+	align-self: auto;
 	place-items: center;
 }
 
@@ -34,13 +33,19 @@
 
 /* Text wrapper */
 .assignment__info {
-	margin-bottom: 46px;
+	align-self: end;
 	text-align: center;
 }
 
+/* Project section wrapper (centers components) */
 .project {
 	width: 100%;
 	display: grid;
 	justify-items: center;
-	margin-bottom: 36px;
+}
+
+/* Inner container for Project section (horizontal spacing and alignment) */
+.project__container {
+	padding-inline: 24px;
+	justify-items: center;
 }
