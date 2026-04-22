@@ -26,3 +26,17 @@ const errorMessage = {
 };
 
 const signUpMessage = document.getElementById("signup-confirmation");
+
+/* ----------------------------------------------------
+	VALIDATION PATTERNS
+    - Define RegEx patterns for valid username and
+    password inputs
+------------------------------------------------------- */
+
+const validationPattern = {
+	username: /^[A-Za-z0-9_-]+$/,
+	passwordUppercase: /[A-Z]/,
+	passwordLowercase: /[a-z]/,
+	passwordNumber: /\d/,
+	passwordSpecialCharacter: /[!@#$%^&*?_\-]/,
+};
