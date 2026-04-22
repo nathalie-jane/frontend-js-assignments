@@ -27,13 +27,13 @@
 	</head>
 	<body>
 		<!-- ==============================
-				MAIN CONTENT
+				SECTION: MAIN CONTENT
 				Page wrapper
 		=================================== -->
 		<main class="page-assignment">
 			<!-- ==============================
-				PAGE HEADING
-				Title + supporting text
+					SECTION: PAGE HEADING
+					Title + supporting text
 			=================================== -->
 			<div class="assignment__info">
 				<!-- Page title -->
@@ -43,14 +43,59 @@
 			</div>
 			<!-- ==============================
 				    SECTION: PROJECT
-					Inner wrapper
+					Project container 
 			=================================== -->
 			<section class="project">
-				<div class="project__container"></div>
+				<!-- Inner container -->
+				<div class="project__container project__container--signup-form">
+					<!-- =================================
+				        	COMPONENT: SIGN UP FORM
+                        	Handles user input and 
+							validation
+			   		====================================== -->
+					<form class="signup-form" id="signup-form" action="#" method="get">
+						<!-- Field group (groups related inputs) -->
+						<fieldset class="signup-form__group">
+							<div class="signup-form__field">
+								<label class="signup-form__label" for="signup-username">Username</label>
+								<!-- Username input field -->
+								<input
+									class="signup-form__input"
+									id="signup-username"
+									type="text"
+									name="username"
+									placeholder="Enter username"
+									required />
+								<!-- Username error message -->
+								<p class="signup-form__error" id="error-message-username"></p>
+							</div>
+							<div class="signup-form__field">
+								<label class="signup-form__label" for="signup-password">Password</label>
+								<!-- Password input field -->
+								<input
+									class="signup-form__input"
+									id="signup-password"
+									type="password"
+									name="password"
+									placeholder="Enter password"
+									required />
+								<!-- Password error message -->
+								<p class="signup-form__error" id="error-message-password"></p>
+							</div>
+						</fieldset>
+						<!-- Submit button -->
+						<button class="signup-form__btn" id="signup-btn" type="submit">Sign Up</button>
+					</form>
+					<!-- END COMPONENT: SIGN UP FORM -->
+				</div>
 			</section>
-			<!-- END Section: Project -->
-			<!-- Back link navigation -->
+			<!-- END SECTION: PROJECT -->
+			<!-- ==============================
+					COMPONENT: BACK LINK
+					Navigation to homepgae
+			=================================== -->
 			<a class="assignment__back-link" href="../index.html">← Back to Home</a>
 		</main>
+		<!-- END SECTION: MAIN CONTENT -->
 	</body>
 </html>

@@ -1,0 +1,11 @@
+/* ===================================
+    SECTION: PROJECT CONTAINER
+    Layout and structure
+====================================== */
+
+/* Size modifier for sign up form component */
+.project__container--signup-form {
+	width: 100%;
+	max-width: 28rem;
+	min-height: 25rem;
+}
