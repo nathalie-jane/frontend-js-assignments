@@ -52,11 +52,11 @@ function extractWords(textToWords) {
 function wordCounter(numberOfWords) {
 	if (numberOfWords > 0) {
 		wordCounterValue.classList.add("word-counter__value--active");
-		wordCounterValue.textContent = `${numberOfWords}`;
+		wordCounterValue.textContent = numberOfWords;
 		console.log(numberOfWords);
 	} else {
 		wordCounterValue.classList.remove("word-counter__value--active");
-		wordCounterValue.textContent = `${numberOfWords}`;
+		wordCounterValue.textContent = numberOfWords;
 	}
 }
 
