@@ -40,3 +40,26 @@ const validationPattern = {
 	passwordNumber: /\d/,
 	passwordSpecialCharacter: /[!@#$%^&*?_\-]/,
 };
+
+/* ----------------------------------------------------
+	INPUT HANDLING
+	- Get input values for username and password
+------------------------------------------------------- */
+
+function getInputValues() {
+	const input = {
+		username: userInput.username.value,
+		password: userInput.password.value,
+	};
+
+	return input;
+}
+
+/* ----------------------------------------------------
+	EVENTS
+    - Prevent default form submission
+------------------------------------------------------- */
+
+signUpForm.addEventListener("submit", function (event) {
+	event.preventDefault();
+});
