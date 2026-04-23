@@ -6,8 +6,9 @@
 
 /* ----------------------------------------------------
     DOM SELECTORS
-    - Connect JS to HTML elements: input field (user 
-    text) and output field (word count display)
+    - Connect JS to HTML elements: 
+		- Input field
+		- Output field (word count display)
 ------------------------------------------------------- */
 
 const wordInputElement = document.getElementById("word-counter-input");
@@ -61,7 +62,7 @@ function wordCounter(numberOfWords) {
 }
 
 /* ----------------------------------------------------
-    EVENTS
+    EVENT
     - Detect typing in input field
     - Update word count when user starts typing
 ------------------------------------------------------- */

@@ -3,14 +3,15 @@
     - Handles user input
     - Validates form input data
     - Updates UI with error messages or success
-    message
+    feedback
 ====================================================== */
 
 /* ----------------------------------------------------
     DOM SELECTORS
-    - Connect JS to HTML elements: sign-up form, input 
-    fields (username and password), validation
-    feedback (error and success)
+    - Connect JS to HTML elements:
+		- Sign-up form
+		- Input fields (username and password)
+		- Validation messages (error and success)
 ------------------------------------------------------- */
 
 const signUpForm = document.getElementById("signup-form");
@@ -45,6 +46,8 @@ const validationPattern = {
 	INPUT HANDLING
 	- Get input values for username and password
     - Display error message for invalid inputs
+	- Clear existing error messages when user starts 
+	typing
 	- Hide form element and instead show confirmation
 	message in UI on successful submit
 ------------------------------------------------------- */
@@ -63,6 +66,11 @@ function displayError(errorField, message) {
 	errorField.textContent = message;
 }
 
+function clearError(errorField) {
+	errorField.classList.remove("signup-form__error--display");
+	errorField.textContent = "";
+}
+
 function displaySignUpConfirmation() {
 	signUpMessage.classList.add("visible");
 	signUpForm.classList.add("hidden");
@@ -71,13 +79,13 @@ function displaySignUpConfirmation() {
 /* ----------------------------------------------------
 	VALIDATION: USERNAME
     - Check length (3-20 characters)
-    - Validate RegEx pattern for username
-    - Display error message if invalid
+    - Check for valid username characters
+    - Display error message if validation fails
 ------------------------------------------------------- */
 
 function validateUsername(username) {
 	const usernameLength = username.length;
-	const usernamePattern = validationPattern.username.test(username);
+	const isValidUsername = validationPattern.username.test(username);
 
 	if (usernameLength < 3 || usernameLength > 20) {
 		displayError(errorMessage.username, "Username must be between 3-20 characters.");
@@ -85,7 +93,7 @@ function validateUsername(username) {
 		return false;
 	}
 
-	if (!usernamePattern) {
+	if (!isValidUsername) {
 		displayError(errorMessage.username, "Please enter a valid username.");
 		console.log("Please enter a valid username.");
 		return false;
@@ -99,7 +107,7 @@ function validateUsername(username) {
     - Check for whitespace characters
     - Check length (minimum 8 characters)
     - Validate RegEx pattern for password
-    - Display error message if invalid
+    - Display error message if validation fails
 ------------------------------------------------------- */
 
 function validatePassword(password) {
@@ -135,11 +143,12 @@ function validatePassword(password) {
 }
 
 /* ----------------------------------------------------
-	EVENTS
-	- Run validation on submit
-    - Prevent default form submission
-    - Display UI feedback if username and password
-	are valid
+	EVENT: FORM SUBMIT
+	- Handle form submission when "Sign Up" button is
+	clicked
+	- Prevent default form submission
+	- Validate username and password inputs
+    - Display UI feedback based on validation result
 ------------------------------------------------------- */
 
 signUpForm.addEventListener("submit", function (event) {
@@ -153,4 +162,18 @@ signUpForm.addEventListener("submit", function (event) {
 		displaySignUpConfirmation();
 		console.log("Registration successful!");
 	}
+});
+
+/* ----------------------------------------------------
+	EVENT: INPUT FEEDBACK
+	- Clear existing error messages when user starts 
+	typing
+------------------------------------------------------- */
+
+userInput.username.addEventListener("input", function () {
+	clearError(errorMessage.username);
+});
+
+userInput.password.addEventListener("input", function () {
+	clearError(errorMessage.password);
 });
