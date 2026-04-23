@@ -9,6 +9,7 @@
 /* ----------------------
     BASE STYLES
 ------------------------- */
+
 @import url("../css/base/globals.css");
 @import url("../css/base/normalize.css");
 @import url("../css/base/typography.css");
