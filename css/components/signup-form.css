@@ -97,3 +97,40 @@
 	line-height: 1.6;
 	letter-spacing: 0.03rem;
 }
+
+/* Hidden state for sign-up form if signup is successful */
+.signup-form.hidden {
+	display: none;
+}
+
+/* Hidden state for sign-up success (default) */
+.signup-confirmation {
+	width: 100%;
+	max-width: 28rem;
+	min-height: 12rem;
+	display: none;
+	justify-items: center;
+	gap: 32px;
+	margin-top: 40px;
+	border: 1px solid #0a0a0a;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+	color: #1f8b51;
+}
+
+/* Sign-up success checkmark icon */
+.signup-confirmation__icon {
+	align-self: end;
+	font-size: 2.25rem;
+}
+
+/* Sign-up success message */
+.signup-confirmation__message {
+	font-size: 1.25rem;
+	line-height: 1.5;
+	letter-spacing: 0.03rem;
+}
+
+/* Visible state for sign-up success container */
+.signup-confirmation.visible {
+	display: grid;
+}

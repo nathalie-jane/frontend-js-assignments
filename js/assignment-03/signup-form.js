@@ -45,6 +45,8 @@ const validationPattern = {
 	INPUT HANDLING
 	- Get input values for username and password
     - Display error message for invalid inputs
+	- Hide form element and instead show confirmation
+	message in UI on successful submit
 ------------------------------------------------------- */
 
 function getInputValues() {
@@ -59,6 +61,11 @@ function getInputValues() {
 function displayError(errorField, message) {
 	errorField.classList.add("signup-form__error--display");
 	errorField.textContent = message;
+}
+
+function displaySignUpConfirmation() {
+	signUpMessage.classList.add("visible");
+	signUpForm.classList.add("hidden");
 }
 
 /* ----------------------------------------------------
@@ -129,8 +136,10 @@ function validatePassword(password) {
 
 /* ----------------------------------------------------
 	EVENTS
+	- Run validation on submit
     - Prevent default form submission
-    - Run validation on submit
+    - Display UI feedback if username and password
+	are valid
 ------------------------------------------------------- */
 
 signUpForm.addEventListener("submit", function (event) {
@@ -139,4 +148,9 @@ signUpForm.addEventListener("submit", function (event) {
 	const formInputs = getInputValues();
 	const isUsernameValid = validateUsername(formInputs.username);
 	const isPasswordValid = validatePassword(formInputs.password);
+
+	if (isUsernameValid && isPasswordValid) {
+		displaySignUpConfirmation();
+		console.log("Registration successful!");
+	}
 });
