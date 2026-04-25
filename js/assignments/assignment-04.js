@@ -2,7 +2,7 @@
     Lesson 04: MATH, LOOPS, AND ARRAYS
 
 	- EXERCISE 1: GUESS THE RANDOM NUMBER
-	- EXERCISE 2:
+	- EXERCISE 2: ARRAY OF RANDOM NUMBERS
 	- EXERCISE 3:
 ================================================== */
 
@@ -81,3 +81,46 @@ function getNumberInput(message) {
 --------------------------------------------- */
 
 guessNumberGame(1, 10);
+
+// EXERCISE 2
+/* -----------------------------------------
+	ARRAY OF RANDOM NUMBERS
+
+	- Create empty array
+	- Run loop based on array length (number 
+	of items)
+	- Add a random number each time
+	- Return completed array
+--------------------------------------------- */
+
+function generateRandomArray(length) {
+	const numbers = [];
+
+	for (let i = 0; i < length; i++) {
+		const randomNumber = getRandomNumber(1, 100);
+		numbers.push(randomNumber);
+	}
+
+	console.log(numbers);
+	return numbers;
+}
+
+/* -----------------------------------------
+	RANDOM NUMBER GENERATOR
+
+	- Generate a random number within range
+	- Return the number
+--------------------------------------------- */
+
+function getRandomNumber(minNumber, maxNumber) {
+	const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+	return randomNumber;
+}
+
+/* -----------------------------------------
+	INITIALIZE RANDOM ARRAY
+
+	- Create an array with a defined number
+	of items
+--------------------------------------------- */
+generateRandomArray(10);
