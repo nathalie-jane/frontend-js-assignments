@@ -3,7 +3,7 @@
 
 	- EXERCISE 1: GUESS THE RANDOM NUMBER
 	- EXERCISE 2: ARRAY OF RANDOM NUMBERS
-	- EXERCISE 3:
+	- EXERCISE 3: SUM OF EVEN NUMBERS IN AN ARRAY
 ================================================== */
 
 // EXERCISE 1
@@ -75,7 +75,7 @@ function getNumberInput(message) {
 }
 
 /* -----------------------------------------
-	INITIALIZE GAME
+	RUN FUNCTION
 
 	- Call game function with defined range
 --------------------------------------------- */
@@ -118,9 +118,48 @@ function getRandomNumber(minNumber, maxNumber) {
 }
 
 /* -----------------------------------------
-	INITIALIZE RANDOM ARRAY
+	RUN FUNCTION
 
 	- Create an array with a defined number
 	of items
 --------------------------------------------- */
+
 generateRandomArray(10);
+
+// EXERCISE 3
+/* -----------------------------------------
+	SUM OF EVEN NUMBERS
+
+	- Create variable for storing sum of
+	even numbers (start with empty --> 0)
+	- Loop through every item in the array
+	- Check if each number in the array is
+	even
+	- Add even numbers to sum
+	- Return total sum
+--------------------------------------------- */
+
+function sumEvenNumbers(array) {
+	let evenNumbersSum = 0;
+
+	for (let i = 0; i < array.length; i++) {
+		const number = array[i];
+
+		if (number % 2 === 0) {
+			evenNumbersSum = evenNumbersSum + number;
+		}
+	}
+	console.log(`Sum of even numbers = ${evenNumbersSum}`);
+	return evenNumbersSum;
+}
+
+/* -----------------------------------------
+	RUN FUNCTION	
+
+	- Reuse function from Exercise 2 to
+	generate an array of random numbers
+	- Pass array into sum of even numbers
+	function
+--------------------------------------------- */
+
+sumEvenNumbers(generateRandomArray(5));
