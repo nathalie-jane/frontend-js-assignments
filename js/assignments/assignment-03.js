@@ -2,26 +2,31 @@
     LESSON 03: CONDITIONAL STATEMENTS AND FUNCTIONS
 
     ASSIGNMENT: Validate user password
-    - Validation based on the following: Minimum length,
-    no spaces, cannot include username
+
+    - Validation based on the following:
+		- Minimum length
+    	- No whitespaces
+		- Cannot include username
 ========================================================== */
 
-/* -------------------------------------------------
+/* ------------------------------------------
     USER INPUT
+
     - Get username and password from user
----------------------------------------------------- */
+--------------------------------------------- */
 
 const username = prompt("Enter a username: ");
 const password = prompt("Enter a password: ");
 
-/* -------------------------------------------------
+/* ------------------------------------------
     PASSWORD VALIDATION
-    - Prevent further code execution if user cancels 
-	prompt
+
+    - Prevent further code execution if user 
+	cancels prompt
     - Minimum of 8 characters
     - No spaces allowed
     - Cannot contain username
----------------------------------------------------- */
+--------------------------------------------- */
 
 function isValidPassword(password, username) {
 	if (username === null || password === null) {
@@ -53,9 +58,10 @@ function isValidPassword(password, username) {
 	return true;
 }
 
-/* -------------------------------------------------
+/* ------------------------------------------
     FUNCTION CALL
+
     - Runs function after user input
----------------------------------------------------- */
+--------------------------------------------- */
 
 isValidPassword(password, username);

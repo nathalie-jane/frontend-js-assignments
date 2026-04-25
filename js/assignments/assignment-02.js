@@ -2,6 +2,7 @@
     LESSON 02: KEYWORDS, STRING METHODS AND PARSE
 
     ASSIGNMENT: Discount calculation
+
     - Ask user for price that includes "$"-sign
     - Validate user input
     - Apply a 10% discount
@@ -12,6 +13,7 @@ let userInput = prompt("Enter a price in dollars ($): ");
 
 /* -------------------------------------------------
     INPUT CHECK
+
     - Prevent further code execution if user cancels 
 	prompt
 	- Validate input format (only one"$"-sign at the 
@@ -32,6 +34,7 @@ if (userInput === null) {
 
 /* -------------------------------------------------
     PROCESS USER INPUT
+	
     - Convert user input into a number (Remove
 	"$"-sign and replace comma with dot for decimals)
     - Validate user input
