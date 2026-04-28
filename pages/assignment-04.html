@@ -21,7 +21,7 @@
 			rel="stylesheet" />
 
 		<!-- Assignment 04 JS -->
-		<script src="../js/assignments/assignment-04.js" defer></script>
+		<!-- <script src="../js/assignments/assignment-04.js" defer></script> -->
 
 		<!-- Mini-project: Dice Game JS -->
 		<script src="../js/projects/dice-game.js" defer></script>
@@ -58,7 +58,53 @@
 				        	COMPONENT: DICE GAME
                         	Interactive dice game
 			   		====================================== -->
-					<div class="dice-game"></div>
+					<div class="dice-game">
+						<!-- Game interface -->
+						<div class="dice-game__interface" id="dice-game-interface">
+							<!-- Dice faces -->
+							<div class="dice-game__dice-container">
+								<!-- Individual dice faces (1-6) -->
+								<img
+									class="dice-game__dice-face"
+									data-dice-number="1"
+									src="../images/dice-game/dice-face-1.svg"
+									alt="Dice showing 1" />
+								<img
+									class="dice-game__dice-face"
+									data-dice-number="2"
+									src="../images/dice-game/dice-face-2.svg"
+									alt="Dice showing 2" />
+								<img
+									class="dice-game__dice-face"
+									data-dice-number="3"
+									src="../images/dice-game/dice-face-3.svg"
+									alt="Dice showing 3" />
+								<img
+									class="dice-game__dice-face"
+									data-dice-number="4"
+									src="../images/dice-game/dice-face-4.svg"
+									alt="Dice showing 4" />
+								<img
+									class="dice-game__dice-face"
+									data-dice-number="5"
+									src="../images/dice-game/dice-face-5.svg"
+									alt="Dice showing 5" />
+								<img
+									class="dice-game__dice-face"
+									data-dice-number="6"
+									src="../images/dice-game/dice-face-6.svg"
+									alt="Dice showing 6" />
+							</div>
+							<!-- Game status (message + roll count) -->
+							<div class="dice-game__status">
+								<p class="dice-game__message" id="dice-game-message"></p>
+								<p class="dice-game__roll-count" id="dice-game-roll-count"></p>
+							</div>
+						</div>
+						<!-- Action button: Roll dice -->
+						<button class="dice-game__button" id="dice-game-button" type="button">Roll Dice</button>
+					</div>
+					<!-- END COMPONENT: DICE GAME -->
 				</div>
 			</section>
 			<!-- END SECTION: PROJECT -->

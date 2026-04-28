@@ -14,3 +14,49 @@
 	border: 1px solid rgba(10, 10, 10, 0.5);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* Game UI: dice image and game status (hidden by default) */
+.dice-game__interface {
+	width: 100%;
+	display: none;
+	justify-items: center;
+	gap: 16px;
+	padding-block: 12px;
+}
+
+/* Visible state for game UI */
+.dice-game__interface.visible {
+	display: grid;
+}
+
+/* Container for dice image (centers horizontally) */
+.dice-game__dice-container {
+	width: 100%;
+	display: grid;
+	justify-items: center;
+}
+
+/* Action button (triggers dice roll) */
+.dice-game__button {
+	padding: 8px 16px;
+	border-radius: 8px;
+	background-color: #85cb33;
+	border: 1px solid #72af2c;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.6;
+	letter-spacing: 0.03rem;
+	transition: background-color 0.2s ease;
+}
+
+/* Button hover effect */
+.dice-game__button:hover {
+	background-color: #72af2c;
+}
+
+/* Button feedback effect on click */
+.dice-game__button:active {
+	transform: scale(0.95);
+}
