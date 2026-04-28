@@ -36,6 +36,24 @@
 	justify-items: center;
 }
 
+/* Game status (message and roll count) */
+.dice-game__status {
+	width: 100%;
+	display: grid;
+	justify-items: center;
+	gap: 8px;
+}
+
+/* Roll count display (hidden by default) */
+.dice-game__roll-count {
+	display: none;
+}
+
+/* Visible state for roll count */
+.dice-game__roll-count.visible {
+	display: block;
+}
+
 /* Action button (triggers dice roll) */
 .dice-game__button {
 	padding: 8px 16px;
