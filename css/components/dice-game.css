@@ -1,0 +1,16 @@
+/* ===================================
+    COMPONENT: DICE GAME
+    Layout and structure
+====================================== */
+
+/* Main wrapper for dice game (centers layout) */
+.dice-game {
+	width: 100%;
+	display: grid;
+	justify-items: center;
+	gap: 20px;
+	border-radius: 8px;
+	padding: 32px;
+	border: 1px solid rgba(10, 10, 10, 0.5);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

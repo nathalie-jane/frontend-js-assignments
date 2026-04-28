@@ -1,0 +1,11 @@
+/* ===================================
+    SECTION: PROJECT CONTAINER
+    Layout and structure
+====================================== */
+
+/* Size modifier for dice game component */
+.project__container--dice-game {
+	width: 100%;
+	max-width: 25rem;
+	min-height: 25rem;
+}
