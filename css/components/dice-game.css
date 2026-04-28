@@ -36,12 +36,32 @@
 	justify-items: center;
 }
 
-/* Game status (message and roll count) */
+/* Game status (feedback and roll count) */
 .dice-game__status {
 	width: 100%;
 	display: grid;
 	justify-items: center;
 	gap: 8px;
+}
+
+/* Shared typography for feedback and roll count */
+.dice-game__feedback,
+.dice-game__roll-count {
+	color: #4a5565;
+	font-size: 1.125rem;
+	line-height: 1.5;
+	letter-spacing: 0.01rem;
+}
+
+/* Game feedback (hidden by default) */
+.dice-game__feedback {
+	display: none;
+	font-weight: 600;
+}
+
+/* Visible state for game feedback */
+.dice-game__feedback.visible {
+	display: block;
 }
 
 /* Roll count display (hidden by default) */

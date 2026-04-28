@@ -10,7 +10,7 @@
 
 const diceGameButton = document.getElementById("dice-game-button");
 const diceGameInterface = document.getElementById("dice-game-interface");
-const diceGameMessage = document.getElementById("dice-game-message");
+const diceGameFeedback = document.getElementById("dice-game-feedback");
 const diceGameCount = document.getElementById("dice-game-roll-count");
 
 /* ----------------------------------------------------
@@ -42,8 +42,20 @@ function displayGameInterface() {
 }
 
 /* ----------------------------------------------------
+    GAME FEEDBACK
+    Show game feedback in UI
+
+    - Display win or retry message
+------------------------------------------------------- */
+
+function displayGameFeedback(text) {
+	diceGameFeedback.classList.add("visible");
+	diceGameFeedback.textContent = text;
+}
+
+/* ----------------------------------------------------
     DICE ROLL COUNT
-    Track and display number of rolls
+    Track and show number of rolls in UI
 
     - Increase counter on each roll
     - Display current number of rolls
@@ -59,6 +71,10 @@ function displayRollCount(count) {
 	diceGameCount.textContent = `Rolls: ${count}`;
 }
 
+function updateGameButtonText(action) {
+	diceGameButton.textContent = action;
+}
+
 /* ----------------------------------------------------
     GAME HANDLER
 ------------------------------------------------------- */
@@ -71,6 +87,13 @@ function handleDiceButtonClick() {
 
 	const currentRollCount = updateRollCount();
 	displayRollCount(currentRollCount);
+
+	if (diceRoll === 6) {
+		displayGameFeedback("You win!");
+		updateGameButtonText("Play Again");
+	} else {
+		displayGameFeedback("Try again!");
+	}
 }
 
 /* ----------------------------------------------------
