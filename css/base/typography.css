@@ -10,13 +10,13 @@
 }
 
 /* Main title on individual assignment pages */
-.assignment__title {
+.page-assignment__title {
 	margin-bottom: 16px;
 }
 
 /* Shared heading styles for all pages  */
 .assignments__title,
-.assignment__title {
+.page-assignment__title {
 	font-size: 2.25rem;
 	line-height: 1.3;
 	font-weight: 500;
@@ -24,7 +24,7 @@
 }
 
 /* Supporting text on individual assignment pages */
-.assignment__text {
+.page-assignment__text {
 	margin-bottom: 16px;
 	font-size: 1rem;
 	line-height: 1.6;

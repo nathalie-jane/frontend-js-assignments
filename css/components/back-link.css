@@ -4,7 +4,7 @@
 ====================================== */
 
 /* Back link styling */
-.assignment__back-link {
+.page-assignment__back-link {
 	align-self: center;
 	padding: 12px 32px;
 	border: 1px solid #0a0a0a;
@@ -20,13 +20,13 @@
 }
 
 /* Removes default link styles */
-.assignment__back-link,
-.assignment__back-link:visited {
+.page-assignment__back-link,
+.page-assignment__back-link:visited {
 	text-decoration: none;
 	color: #ffffff;
 }
 
 /* Button feedback effect on click */
-.assignment__back-link:active {
+.page-assignment__back-link:active {
 	transform: scale(0.95);
 }
