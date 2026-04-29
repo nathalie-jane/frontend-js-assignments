@@ -36,6 +36,18 @@
 	justify-items: center;
 }
 
+/* Individual dice face (hidden by default) */
+.dice-game__dice-face {
+	display: none;
+	width: 5rem;
+	height: 5rem;
+}
+
+/* Visible state for dice face (based on dice roll outcome) */
+.dice-game__dice-face.visible {
+	display: block;
+}
+
 /* Game status (feedback and roll count) */
 .dice-game__status {
 	width: 100%;

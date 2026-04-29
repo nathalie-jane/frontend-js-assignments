@@ -1,17 +1,28 @@
+/* ====================================================
+	DICE GAME (ROLL A 6 TO WIN)
+
+	- Handles button button interaction
+	- Generates random dice rolls
+	- Updates UI with visuals, feedback and roll count
+	- Manages game flow and reset
+====================================================== */
+
 /* ----------------------------------------------------
     DOM SELECTORS
     Connect JS to HTML elements
 
-	- Roll dice button
+	- Action button (roll dice / play again)
     - Game interface container
-    - Game feedback display
+    - Game feedback display (win / retry)
     - Roll count display
+    - All dice face images (1-6)
 ------------------------------------------------------- */
 
 const diceGameButton = document.getElementById("dice-game-button");
 const diceGameInterface = document.getElementById("dice-game-interface");
 const diceGameFeedback = document.getElementById("dice-game-feedback");
 const diceGameCount = document.getElementById("dice-game-roll-count");
+const diceGameImages = document.querySelectorAll(".dice-game__dice-face");
 
 /* ----------------------------------------------------
     GAME STATE
@@ -22,13 +33,15 @@ const diceGameCount = document.getElementById("dice-game-roll-count");
     - Count number of rolls (default → 0)
 ------------------------------------------------------- */
 
-let isGameStarted = false;
-let hasWon = false;
+let hasGameStarted = false;
+let hasUserWon = false;
 let rollCount = 0;
 
 /* ----------------------------------------------------
     DICE ROLL GENERATOR
-    - Generate random number (1-6)
+    Generate random dice value
+
+    - Random number between 1-6
     - Return rolled value
 ------------------------------------------------------- */
 
@@ -54,10 +67,40 @@ function hideGameInterface() {
 }
 
 /* ----------------------------------------------------
+    DICE DISPLAY
+    Update dice visuals based on rolled value
+
+    - Loop through all dice faces (1-6)
+    - Display correct dice image for rolled value
+    - Hide dice images on game reset
+------------------------------------------------------- */
+
+function displayDiceFace(diceRoll) {
+	for (let i = 0; i < diceGameImages.length; i++) {
+		const diceFace = diceGameImages[i];
+		const diceFaceNumber = Number(diceFace.dataset.diceNumber);
+
+		if (diceFaceNumber === diceRoll) {
+			diceFace.classList.add("visible");
+		} else {
+			diceFace.classList.remove("visible");
+		}
+	}
+}
+
+function hideDiceFaces() {
+	for (let i = 0; i < diceGameImages.length; i++) {
+		const diceFace = diceGameImages[i];
+		diceFace.classList.remove("visible");
+	}
+}
+
+/* ----------------------------------------------------
     GAME FEEDBACK
     Show and reset game feedback in UI
 
-    - Display win or retry message
+    - Display win message when rolling a 6
+    - Otherwise display retry message
     - Clear message on new game
 ------------------------------------------------------- */
 
@@ -111,16 +154,17 @@ function updateGameButtonText(action) {
     GAME RESET
     Reset game and UI to default state
 
-    - Reset game state values
-    - Hide game feedback and count
+    - Reset variables
+    - Clear UI (dice, feedback, count)
     - Reset button text to "Roll Dice"
 ------------------------------------------------------- */
 
 function resetDiceGame() {
-	isGameStarted = false;
-	hasWon = false;
+	hasGameStarted = false;
+	hasUserWon = false;
 	rollCount = 0;
 
+	hideDiceFaces();
 	hideGameFeedback();
 	hideRollCount();
 	updateGameButtonText("Roll Dice");
@@ -128,26 +172,27 @@ function resetDiceGame() {
 
 /* ----------------------------------------------------
     GAME HANDLER
-    Handle game state on button click
+    Handle game flow on button click
 
     - Start game on first click
     - Generate dice roll
-    - Update UI with feedback and roll count
+    - Update UI (rolled value, feedback, count)
     - Check for win
     - Reset game after win
 ------------------------------------------------------- */
 
 function handleDiceButtonClick() {
-	if (isGameStarted === false) {
-		isGameStarted = true;
+	if (hasGameStarted === false) {
+		hasGameStarted = true;
 		displayGameInterface();
-	} else if (hasWon === true) {
+	} else if (hasUserWon === true) {
 		hideGameInterface();
 		resetDiceGame();
 		return;
 	}
 
 	const diceRoll = rollDice();
+	displayDiceFace(diceRoll);
 	console.log(diceRoll);
 
 	const currentRollCount = updateRollCount();
@@ -156,7 +201,7 @@ function handleDiceButtonClick() {
 	if (diceRoll === 6) {
 		displayGameFeedback("You win!");
 		updateGameButtonText("Play Again");
-		hasWon = true;
+		hasUserWon = true;
 	} else {
 		displayGameFeedback("Try again!");
 	}
