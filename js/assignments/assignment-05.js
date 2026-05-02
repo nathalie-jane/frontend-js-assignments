@@ -5,8 +5,10 @@
 	- balance: stores current account balance
     - getBalance(): returns account balance
 
-	- deposit(amount):
-	- withdrawal(amount):
+	- deposit(amount): validates and adds
+	money to account
+	- withdrawal(amount): validates and
+	removes money from account
 
 	- getAccountName(): returns account name
 
@@ -20,13 +22,31 @@ const account = {
 	accountName: "Jane Doe",
 	balance: 10000,
 	getBalance() {
-		console.log(this.balance.toFixed(2));
+		console.log(`Your account balance is: ${this.balance.toFixed(2)}`);
 		return this.balance;
 	},
-	deposit(amount) {},
-	withdrawal(amount) {},
+	deposit(amount) {
+		if (Number.isNaN(amount) || amount <= 0) {
+			return this.accountError("Please enter a valid number.");
+		} else {
+			this.balance += amount;
+			console.log(`Transaction completed.\nYour new balance is ${this.balance.toFixed(2)}`);
+			return this.balance;
+		}
+	},
+	withdrawal(amount) {
+		if (Number.isNaN(amount) || amount <= 0) {
+			return this.accountError("Please enter a valid number.");
+		} else if (amount > this.balance) {
+			return this.accountError("Insufficient funds.");
+		} else {
+			this.balance -= amount;
+			console.log(`Transaction completed. Your new balance is ${this.balance.toFixed(2)}`);
+			return this.balance;
+		}
+	},
 	getAccountName() {
-		console.log(this.accountName);
+		console.log(`Your account name is: ${this.accountName}`);
 		return this.accountName;
 	},
 	exitAccount() {},
@@ -40,6 +60,7 @@ const account = {
 	FUNCTION: ATM
 
 	- Displays menu to user
+	- Handles user selection
 --------------------------------------------- */
 
 function atm() {
@@ -54,13 +75,32 @@ function atm() {
 			break;
 		}
 		case 2: {
+			account.getBalance();
 			break;
 		}
 		case 3: {
-			break;
+			const userDeposit = prompt("Enter amount to deposit: ");
+
+			if (userDeposit === null) {
+				console.log("Input cancelled.");
+				return;
+			} else {
+				const amountToDeposit = Number(userDeposit);
+				account.deposit(amountToDeposit);
+				break;
+			}
 		}
 		case 4: {
-			break;
+			const userWithdrawal = prompt("Enter amount to withdraw: ");
+
+			if (userWithdrawal === null) {
+				console.log("Input cancelled.");
+				return;
+			} else {
+				const amountToWithdraw = Number(userWithdrawal);
+				account.withdrawal(amountToWithdraw);
+				break;
+			}
 		}
 		case 5: {
 			account.exitAccount();
