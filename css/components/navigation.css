@@ -8,21 +8,28 @@
 	width: 100%;
 }
 
-/* Vertical list of links */
+/* Displays links in two columns */
 .site-nav__list {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 12px;
+	display: grid;
+	grid-template-columns: repeat(2, 12rem);
+	justify-content: center;
+	gap: 24px;
 	list-style-type: none;
 }
 
-/* Link container */
+/* Individual link container */
 .site-nav__item {
-	width: 75%;
+	width: 100%;
 	border: 1px solid #0a0a0a;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Centers last link container */
+.site-nav__item:last-child {
+	grid-column: 1 / -1;
+	width: 12rem;
+	justify-self: center;
 }
 
 /* Link items */
