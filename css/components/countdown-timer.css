@@ -1,0 +1,140 @@
+/* ===================================
+    COMPONENT: COUNTDOWN TIMER
+    Layout and structure
+====================================== */
+
+/* Main wrapper for timer */
+.timer {
+	width: 100%;
+	display: grid;
+	padding: 38px 32px;
+	border: 1px solid rgba(10, 10, 10, 0.5);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Inner container  */
+.timer__inner {
+	width: 100%;
+	display: grid;
+	justify-items: center;
+	gap: 20px;
+}
+
+/* Countdown display */
+.timer__display {
+	margin-block: 12px;
+	font-family: "Roboto Mono", monospace;
+	font-size: 3rem;
+	line-height: 1;
+	letter-spacing: 0.03rem;
+}
+
+/* Form container for timer inputs and buttons */
+.timer__form {
+	width: 100%;
+	display: grid;
+	justify-items: center;
+	gap: 32px;
+	padding-top: 8px;
+}
+
+/* Wrapper for timer input fields */
+.timer__field-group {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* Container for each label and input pair */
+.timer__field-item {
+	width: 100%;
+	max-width: 8rem;
+	min-height: 4rem;
+	display: grid;
+	justify-items: center;
+	gap: 8px;
+}
+
+/* Input field labels */
+.timer__label {
+	margin-block: 8px;
+	font-size: 1.125rem;
+	line-height: 1.5;
+	letter-spacing: 0.04rem;
+}
+
+/* Timer input fields */
+.timer__input {
+	width: 70%;
+	padding: 12px 8px 12px 20px;
+	text-align: center;
+	color: #0a0a0a;
+}
+
+/* Placeholder styling */
+.timer__input::placeholder {
+	color: rgba(10, 10, 10, 0.5);
+}
+
+/* Shared typography for inputs and placeholders */
+.timer__input,
+.timer__input::placeholder {
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.03rem;
+}
+
+/* Hides placeholder value when input is focused */
+.timer__input:focus::placeholder {
+	color: transparent;
+}
+
+/* Container for primary and secondary timer buttons */
+.timer__actions {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 32px;
+	padding-top: 12px;
+}
+
+/* Shared button styles */
+.timer__button {
+	width: 35%;
+	padding: 12px 24px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+/* Button feedback effect on click */
+.timer__button:active {
+	transform: scale(0.95);
+}
+
+/* Primary action button (Start / Pause / Resume) */
+.timer__button--primary {
+	background-color: #698899;
+	border: 1px solid #698899;
+	color: #f2f2f2;
+}
+
+/* Primary button hover effect */
+.timer__button--primary:hover {
+	background-color: #4d6471;
+}
+
+/* Secondary action button (Reset) */
+.timer__button--secondary {
+	background-color: #d0dce2;
+	border: 1px solid #696969;
+}
+
+/* Secondary button hover effect */
+.timer__button--secondary:hover {
+	background-color: #b4c5ce;
+}
