@@ -19,15 +19,68 @@ const timerSecondsInput = document.getElementById("timer-seconds");
 const timerStartButton = document.getElementById("timer-button-primary");
 const timerResetButton = document.getElementById("timer-button-secondary");
 
-/* OBJECT: COUNTDOWN TIMER
+/* --------------------------------------------
+	TIMER OBJECT
 
-Properties:
-- remainingSeconds: stores how many seconds are left
-- isRunning: stores if timer is running or paused
+	- remainingSeconds
+		Stores remaining countdown time in seconds 
+		(default → 0)
 
-Methods:
-- getInputValues: reads minutes and seconds from user input
-- start(): starts countdown
-- pause(): pauses countdown
-- reset(): resets timer
-- updateDisplay(): updates UI with remaining time */
+	- isRunning
+		Checks if timer is currently active 
+		(default → not running)
+
+	- getInputs()
+		Collects and validates user input
+
+	- start()
+		Starts countdown timer
+
+	- pause()
+		Pauses active countdown
+
+	- reset()
+		Resets timer values and display to 
+		default state
+
+	- updateDisplay()
+		Formats and updates timer output in UI
+------------------------------------------------ */
+
+const countdownTimer = {
+	remainingSeconds: 0,
+	isRunning: false,
+
+	getInputValues() {},
+	start() {
+		console.log("Start method called."); // For testing
+	},
+	pause() {},
+	reset() {
+		console.log("Reset method called."); // For testing
+	},
+	updateDisplay() {},
+};
+
+/* ----------------------------------------------------
+	START BUTTON HANDLER
+------------------------------------------------------- */
+
+function handleStartButtonClick() {
+	countdownTimer.start();
+}
+
+/* ----------------------------------------------------
+	RESET BUTTON HANDLER
+------------------------------------------------------- */
+
+function handleResetButtonClick() {
+	countdownTimer.reset();
+}
+
+/* ----------------------------------------------------
+    BUTTON EVENTS
+------------------------------------------------------- */
+
+timerStartButton.addEventListener("click", handleStartButtonClick);
+timerResetButton.addEventListener("click", handleResetButtonClick);
