@@ -63,12 +63,25 @@ const countdownTimer = {
 	},
 	start() {
 		this.getInputValues();
+		this.updateDisplay();
 	},
 	pause() {},
 	reset() {
 		console.log("Reset method called."); // For testing
 	},
-	updateDisplay() {},
+	updateDisplay() {
+		let minutes = Math.trunc(this.remainingSeconds / 60);
+		let seconds = this.remainingSeconds % 60;
+
+		let formattedMinutes = minutes.toString();
+		let formattedSeconds = seconds.toString();
+		formattedMinutes = formattedMinutes.padStart(2, "0");
+		formattedSeconds = formattedSeconds.padStart(2, "0");
+
+		const displayTime = formattedMinutes + ":" + formattedSeconds;
+		timerDisplay.textContent = displayTime;
+		console.log(displayTime); // For testing
+	},
 };
 
 /* ----------------------------------------------------
