@@ -34,11 +34,14 @@ const timerResetButton = document.getElementById("timer-button-secondary");
 		Checks if timer is currently active 
 		(default → not running)
 
-	- getInputs()
+	- getInputValues()
 		Collects and validates user input
 
 	- start()
 		Starts countdown timer
+
+	- updateCountdown()
+		Decreases countdown value every second
 
 	- pause()
 		Pauses active countdown
@@ -59,15 +62,25 @@ const countdownTimer = {
 	getInputValues() {
 		let inputMinutes = timerMinutesInput.valueAsNumber;
 		let inputSeconds = timerSecondsInput.valueAsNumber;
+
+		if (Number.isNaN(inputMinutes)) {
+			inputMinutes = 0;
+		}
+		if (Number.isNaN(inputSeconds)) {
+			inputSeconds = 0;
+		}
+
 		let totalSeconds = inputMinutes * 60 + inputSeconds;
 		this.remainingSeconds = totalSeconds;
-
-		console.log(`${this.remainingSeconds} seconds.`); // For testing
+		console.log(`${this.remainingSeconds} seconds`); // For testing
 		return this.remainingSeconds;
 	},
 	start() {
 		if (this.remainingSeconds === 0) {
 			this.getInputValues();
+		}
+		if (this.remainingSeconds === 0) {
+			return;
 		}
 		if (this.isRunning === true) {
 			return;
@@ -81,15 +94,29 @@ const countdownTimer = {
 		}
 	},
 	updateCountdown() {
-		console.log("1 second passed.");
+		if (this.remainingSeconds > 0) {
+			this.remainingSeconds -= 1;
+			this.updateDisplay();
+			console.log(this.remainingSeconds); // For testing
+		}
+		if (this.remainingSeconds <= 0) {
+			clearInterval(this.intervalId);
+			this.isRunning = false;
+			console.log("Timer stopped"); // For testing
+			return;
+		}
 	},
 	pause() {
 		clearInterval(this.intervalId);
 		this.isRunning = false;
-		console.log("Countdown paused.");
+		console.log("Countdown paused"); // For testing
 	},
 	reset() {
-		console.log("Reset method called."); // For testing
+		clearInterval(this.intervalId);
+		this.remainingSeconds = 0;
+		this.updateDisplay();
+		this.isRunning = false;
+		console.log("Countdown reset"); // For testing
 	},
 	updateDisplay() {
 		let minutes = Math.trunc(this.remainingSeconds / 60);
@@ -116,7 +143,6 @@ function handleStartButtonClick() {
 		timerStartButton.textContent = "Resume";
 	} else {
 		countdownTimer.start();
-
 		if (countdownTimer.isRunning === true) {
 			timerStartButton.textContent = "Pause";
 		}
