@@ -1,3 +1,24 @@
+/* ====================================================
+	COUNTDOWN TIMER
+====================================================== */
+
+/* ----------------------------------------------------
+    DOM SELECTORS
+    Connect JS to HTML elements
+
+	- Countdown display 
+	- Input field for minutes
+	- Input field for seconds
+	- Start / Pause / Resume button
+	- Reset button
+------------------------------------------------------- */
+
+const timerDisplay = document.getElementById("timer-display");
+const timerMinutesInput = document.getElementById("timer-minutes");
+const timerSecondsInput = document.getElementById("timer-seconds");
+const timerStartButton = document.getElementById("timer-button-primary");
+const timerResetButton = document.getElementById("timer-button-secondary");
+
 /* OBJECT: COUNTDOWN TIMER
 
 Properties:
