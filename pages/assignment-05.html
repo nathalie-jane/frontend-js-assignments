@@ -20,8 +20,18 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet" />
 
+		<!-- Font: "Roboto Mono" -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+			rel="stylesheet" />
+
 		<!-- Assignment 05 JS -->
-		<script src="../js/assignments/assignment-05.js" defer></script>
+		<!-- <script src="../js/assignments/assignment-05.js" defer></script> -->
+
+		<!-- Countdown Timer JS -->
+		<script src="../js/projects/countdown-timer.js" defer></script>
 
 		<!-- Main stylesheet -->
 		<link rel="stylesheet" href="../css/main.css" />
@@ -42,6 +52,74 @@
 				<!-- Supporting text -->
 				<p class="page-assignment__text">Check the console for output</p>
 			</div>
+			<!-- ==============================
+				    SECTION: PROJECT
+					Project container 
+			=================================== -->
+			<section class="project">
+				<!-- Inner container -->
+				<div class="project__container project__container--timer">
+					<!-- Project title -->
+					<h2 class="project__title">Countdown Timer</h2>
+					<!-- =================================
+				        	COMPONENT: COUNTDOWN TIMER
+							Real-time countdown timer
+			   		====================================== -->
+					<div class="timer">
+						<div class="timer__inner">
+							<!-- Countdown display -->
+							<p class="timer__display" id="timer-display">00:00</p>
+							<!-- Input area for timer values -->
+							<form class="timer__form">
+								<!-- Wrapper for input fields -->
+								<div class="timer__field-group" id="timer-field-group">
+									<!-- Input for minutes -->
+									<div class="timer__field-item">
+										<label class="timer__label" for="timer-minutes">Minutes</label>
+										<input
+											class="timer__input"
+											id="timer-minutes"
+											type="number"
+											step="1"
+											min="0"
+											placeholder="0"
+											required />
+									</div>
+									<!-- Input for seconds -->
+									<div class="timer__field-item">
+										<label class="timer__label" for="timer-seconds">Seconds</label>
+										<input
+											class="timer__input"
+											id="timer-seconds"
+											type="number"
+											step="1"
+											min="0"
+											max="59"
+											placeholder="0"
+											required />
+									</div>
+								</div>
+								<!-- Action buttons -->
+								<div class="timer__actions">
+									<!-- Button for Start / Pause / Resume -->
+									<button class="timer__button timer__button--primary" id="timer-button-primary" type="button">
+										Start
+									</button>
+									<!-- Resets timer display and input fields -->
+									<button
+										class="timer__button timer__button--secondary"
+										id="timer-button-secondary"
+										type="reset">
+										Reset
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- END COMPONENT: COUNTDOWN TIMER -->
+				</div>
+			</section>
+			<!-- END SECTION: PROJECT -->
 			<!-- ==============================
 					COMPONENT: BACK LINK
 					Navigation to homepage
