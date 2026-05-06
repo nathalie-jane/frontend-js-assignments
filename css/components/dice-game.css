@@ -41,6 +41,7 @@
 	display: none;
 	width: 5rem;
 	height: 5rem;
+	filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
 }
 
 /* Visible state for dice face (based on dice roll outcome) */
@@ -90,8 +91,8 @@
 .dice-game__button {
 	padding: 8px 16px;
 	border-radius: 8px;
-	background-color: #85cb33;
-	border: 1px solid #72af2c;
+	background-color: #b3cf99;
+	border: 1px solid #95bb72;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 	cursor: pointer;
 	font-size: 1rem;
@@ -103,7 +104,7 @@
 
 /* Button hover effect */
 .dice-game__button:hover {
-	background-color: #72af2c;
+	background-color: #95bb72;
 }
 
 /* Button feedback effect on click */

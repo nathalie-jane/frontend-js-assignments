@@ -69,8 +69,8 @@
 
 /* Submit button styling */
 .signup-form__btn {
-	width: 40%;
-	padding: 12px 32px;
+	width: 28%;
+	padding: 8px 16px;
 	background-color: #c2c9ff;
 	border: 1px solid #99a5ff;
 	border-radius: 8px;
