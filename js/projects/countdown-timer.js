@@ -51,9 +51,18 @@ const countdownTimer = {
 	remainingSeconds: 0,
 	isRunning: false,
 
-	getInputValues() {},
+	getInputValues() {
+		let inputMinutes = timerMinutesInput.valueAsNumber;
+		let inputSeconds = timerSecondsInput.valueAsNumber;
+
+		let totalSeconds = inputMinutes * 60 + inputSeconds;
+		this.remainingSeconds = totalSeconds;
+
+		console.log(`${this.remainingSeconds} seconds.`); // For testing
+		return this.remainingSeconds;
+	},
 	start() {
-		console.log("Start method called."); // For testing
+		this.getInputValues();
 	},
 	pause() {},
 	reset() {
