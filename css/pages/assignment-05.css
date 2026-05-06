@@ -1,0 +1,11 @@
+/* ===================================
+    SECTION: PROJECT CONTAINER
+    Layout and structure
+====================================== */
+
+/* Size modifier for countdown timer component */
+.project__container--timer {
+	width: 100%;
+	max-width: 28rem;
+	min-height: 33rem;
+}
