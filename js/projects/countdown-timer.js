@@ -26,6 +26,10 @@ const timerResetButton = document.getElementById("timer-button-secondary");
 		Stores remaining countdown time in seconds 
 		(default → 0)
 
+	- intervalId
+		Stores timer interval while countdown is
+		running (default → null)
+
 	- isRunning
 		Checks if timer is currently active 
 		(default → not running)
@@ -49,12 +53,12 @@ const timerResetButton = document.getElementById("timer-button-secondary");
 
 const countdownTimer = {
 	remainingSeconds: 0,
+	intervalId: null,
 	isRunning: false,
 
 	getInputValues() {
 		let inputMinutes = timerMinutesInput.valueAsNumber;
 		let inputSeconds = timerSecondsInput.valueAsNumber;
-
 		let totalSeconds = inputMinutes * 60 + inputSeconds;
 		this.remainingSeconds = totalSeconds;
 
@@ -62,10 +66,28 @@ const countdownTimer = {
 		return this.remainingSeconds;
 	},
 	start() {
-		this.getInputValues();
-		this.updateDisplay();
+		if (this.remainingSeconds === 0) {
+			this.getInputValues();
+		}
+		if (this.isRunning === true) {
+			return;
+		} else {
+			this.isRunning = true;
+			this.updateDisplay();
+
+			this.intervalId = setInterval(() => {
+				this.updateCountdown();
+			}, 1000);
+		}
 	},
-	pause() {},
+	updateCountdown() {
+		console.log("1 second passed.");
+	},
+	pause() {
+		clearInterval(this.intervalId);
+		this.isRunning = false;
+		console.log("Countdown paused.");
+	},
 	reset() {
 		console.log("Reset method called."); // For testing
 	},
@@ -89,7 +111,16 @@ const countdownTimer = {
 ------------------------------------------------------- */
 
 function handleStartButtonClick() {
-	countdownTimer.start();
+	if (countdownTimer.isRunning === true) {
+		countdownTimer.pause();
+		timerStartButton.textContent = "Resume";
+	} else {
+		countdownTimer.start();
+
+		if (countdownTimer.isRunning === true) {
+			timerStartButton.textContent = "Pause";
+		}
+	}
 }
 
 /* ----------------------------------------------------
