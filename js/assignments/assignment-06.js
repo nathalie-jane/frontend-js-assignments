@@ -12,6 +12,17 @@ function addBook(title, author, isRead) {
 	library.push(newBook); // Store book in array
 }
 
-addBook("The Metamorphosis", "Franz Kafka", true); // Call function with arguments (for debugging)
+// Loops through library array and displays properties from each object
+function listBooks() {
+	library.forEach((currentBook) => {
+		console.log(`Title: ${currentBook.title}\nAuthor: ${currentBook.author}\nRead: ${currentBook.isRead}\n`);
+	});
+}
 
-console.log(library); // Log in console
+// Call function with arguments (for debugging)
+addBook("The Metamorphosis", "Franz Kafka", true);
+addBook("Crime and Punishment", "Fyodor Dostoevsky", true);
+addBook("One Hundred Years of Solitude", "Gabriel García Márquez.", false);
+addBook("The House of the Spirits", "Isabel Allende", true);
+
+listBooks(); // Run function
