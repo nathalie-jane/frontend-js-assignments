@@ -1,4 +1,4 @@
-const library = []; // Empty array for storing books
+let library = []; // Empty array for storing books
 
 // Create new book object from input and store object in library array
 function addBook(title, author) {
@@ -44,14 +44,22 @@ function listUnreadBooks() {
 	});
 }
 
+// Searches library array for matching title and removes book from library.
+// Returns new array without removed book and updates library variable.
+function removeBook(title) {
+	const updatedLibrary = library.filter((book) => {
+		return book.title !== title;
+	});
+
+	library = updatedLibrary;
+	listBooks();
+}
+
 // Call function with arguments (log in console)
 addBook("The Metamorphosis", "Franz Kafka");
 addBook("Crime and Punishment", "Fyodor Dostoevsky");
 addBook("One Hundred Years of Solitude", "Gabriel García Márquez");
 addBook("The House of the Spirits", "Isabel Allende");
 
-// Run functions
-listBooks();
-markAsRead("Crime and Punishment");
-listBooks(); // Verify state change
-listUnreadBooks();
+// For debugging
+removeBook("The Metamorphosis");
