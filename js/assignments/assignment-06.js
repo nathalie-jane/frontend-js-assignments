@@ -1,28 +1,46 @@
 const library = []; // Empty array for storing books
 
 // Create new book object from input and store object in library array
-function addBook(title, author, isRead) {
+function addBook(title, author) {
 	// Book object
-	const newBook = {
+	const book = {
 		title,
 		author,
-		isRead,
+		isRead: false,
 	};
 
-	library.push(newBook); // Store book in array
+	library.push(book); // Store book in array
 }
 
 // Loops through library array and displays properties from each object
 function listBooks() {
-	library.forEach((currentBook) => {
-		console.log(`Title: ${currentBook.title}\nAuthor: ${currentBook.author}\nRead: ${currentBook.isRead}\n`);
+	library.forEach((book) => {
+		console.log(`Title: ${book.title}\nAuthor: ${book.author}\nRead: ${book.isRead}\n`); // For debugging
 	});
 }
 
-// Call function with arguments (for debugging)
-addBook("The Metamorphosis", "Franz Kafka", true);
-addBook("Crime and Punishment", "Fyodor Dostoevsky", true);
-addBook("One Hundred Years of Solitude", "Gabriel García Márquez.", false);
-addBook("The House of the Spirits", "Isabel Allende", true);
+// Searches library array for matching title and updates read status
+function markAsRead(title) {
+	const targetBook = library.find((book) => {
+		return book.title === title;
+	});
 
-listBooks(); // Run function
+	if (!targetBook) {
+		console.log(`No book with the title "${title}" was found\n`); // Log in console
+		return false;
+	} else {
+		targetBook.isRead = true;
+		console.log(`"${title}" marked as read\n`); // Log in console
+	}
+}
+
+// Call function with arguments (log in console)
+addBook("The Metamorphosis", "Franz Kafka");
+addBook("Crime and Punishment", "Fyodor Dostoevsky");
+addBook("One Hundred Years of Solitude", "Gabriel García Márquez");
+addBook("The House of the Spirits", "Isabel Allende");
+
+// Run functions
+listBooks();
+markAsRead("Crime and Punishment");
+listBooks(); // Verify state change
