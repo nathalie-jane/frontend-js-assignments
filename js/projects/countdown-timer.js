@@ -92,7 +92,7 @@ const countdownTimer = {
 			inputSeconds = 0;
 		}
 
-		let totalSeconds = inputMinutes * 60 + inputSeconds;
+		const totalSeconds = inputMinutes * 60 + inputSeconds;
 		this.remainingSeconds = totalSeconds;
 		// console.log(`${this.remainingSeconds} seconds`);
 		return this.remainingSeconds;
@@ -235,7 +235,7 @@ function handleResetButtonClick() {
 /* ----------------------------------------------------
     BUTTON EVENTS
 
-	- Connects start and reset butttons to their
+	- Connects start and reset buttons to their
 	  respective handler functions for user click 
 	  interactions
 ------------------------------------------------------- */

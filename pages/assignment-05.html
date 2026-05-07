@@ -2,6 +2,18 @@
 		PAGE: Assignment 05 | JavaScript
 		
 		LESSON 05: OBJECT AND SCOPE
+
+		- assignment-05.js:
+			Course assignment (ATM program using objects
+			and methods to manage account state and 
+			transactions. Uses prompt() for menu-based
+			user input handling and alert() / console.log()
+			for output)
+
+		- countdown-timer.js:
+			Mini-project (interactive countdown timer 
+			with real-time updates, user input handling, 
+			and start/pause/reset functionality)
 ============================================================ -->
 
 <!doctype html>
@@ -11,7 +23,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Assignment 05 | JavaScript</title>
 		<meta name="description" content="" />
-		<meta property="" content="" />
+		<meta property="og:description" content="" />
 
 		<!-- Font: "Roboto" -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,7 +40,7 @@
 			rel="stylesheet" />
 
 		<!-- Assignment 05 JS -->
-		<!-- <script src="../js/assignments/assignment-05.js" defer></script> -->
+		<script src="../js/assignments/assignment-05.js" defer></script>
 
 		<!-- Countdown Timer JS -->
 		<script src="../js/projects/countdown-timer.js" defer></script>
@@ -79,6 +91,7 @@
 										<input
 											class="timer__input"
 											id="timer-minutes"
+											name="minutes"
 											type="number"
 											step="1"
 											min="0"
@@ -91,6 +104,7 @@
 										<input
 											class="timer__input"
 											id="timer-seconds"
+											name="seconds"
 											type="number"
 											step="1"
 											min="0"
@@ -109,7 +123,7 @@
 									<button
 										class="timer__button timer__button--secondary"
 										id="timer-button-secondary"
-										type="reset">
+										type="button">
 										Reset
 									</button>
 								</div>
