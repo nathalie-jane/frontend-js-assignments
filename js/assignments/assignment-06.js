@@ -34,6 +34,16 @@ function markAsRead(title) {
 	}
 }
 
+// Searches library array and lists titles of books that have not been read yet
+function listUnreadBooks() {
+	const unreadBooks = library.filter((book) => {
+		return book.isRead === false;
+	});
+	unreadBooks.forEach((book) => {
+		console.log(book.title); // Log in console
+	});
+}
+
 // Call function with arguments (log in console)
 addBook("The Metamorphosis", "Franz Kafka");
 addBook("Crime and Punishment", "Fyodor Dostoevsky");
@@ -44,3 +54,4 @@ addBook("The House of the Spirits", "Isabel Allende");
 listBooks();
 markAsRead("Crime and Punishment");
 listBooks(); // Verify state change
+listUnreadBooks();
