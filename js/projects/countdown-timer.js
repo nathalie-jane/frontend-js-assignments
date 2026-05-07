@@ -1,26 +1,36 @@
 /* ====================================================
 	COUNTDOWN TIMER
+
+	- Handles countdown timer functionality with 
+	  start, pause, resume and reset features
+	- Manages user input for minutes and seconds
+	- Updates UI with formatted time display and button 
+	  states
 ====================================================== */
 
 /* ----------------------------------------------------
     DOM SELECTORS
     Connect JS to HTML elements
 
-	- Countdown display 
-	- Input field for minutes
-	- Input field for seconds
+	- Countdown display output
+	- Input field container
+	- Minutes input field
+	- Seconds input field
 	- Start / Pause / Resume button
 	- Reset button
 ------------------------------------------------------- */
 
 const timerDisplay = document.getElementById("timer-display");
+const timerInputGroup = document.getElementById("timer-input-group");
 const timerMinutesInput = document.getElementById("timer-minutes");
 const timerSecondsInput = document.getElementById("timer-seconds");
 const timerStartButton = document.getElementById("timer-button-primary");
 const timerResetButton = document.getElementById("timer-button-secondary");
 
 /* --------------------------------------------
-	TIMER OBJECT
+	COUNTDOWN TIMER OBJECT
+
+	PROPERTIES
 
 	- remainingSeconds
 		Stores remaining countdown time in seconds 
@@ -34,24 +44,36 @@ const timerResetButton = document.getElementById("timer-button-secondary");
 		Checks if timer is currently active 
 		(default → not running)
 
+	METHODS
+
 	- getInputValues()
-		Collects and validates user input
+		Collects and validates user input, and
+		converts it to total seconds for countdown
 
 	- start()
-		Starts countdown timer
+		Starts countdown timer if valid input is
+		provided and timer is not already running
+
+	- stop()
+		Stops active countdown interval and resets
+		timer state
 
 	- updateCountdown()
-		Decreases countdown value every second
+		Decreases countdown value every second and
+		updates display; stops timer when it reaches 
+		zero
 
 	- pause()
-		Pauses active countdown
+		Pauses active countdown without resetting
+		current timer values
 
 	- reset()
-		Resets timer values and display to 
-		default state
+		Restores countdown values, display and
+		timer state to default
 
 	- updateDisplay()
-		Formats and updates timer output in UI
+		Formats remaining seconds into MM:SS, and 
+		updates timer display in UI
 ------------------------------------------------ */
 
 const countdownTimer = {
@@ -72,7 +94,7 @@ const countdownTimer = {
 
 		let totalSeconds = inputMinutes * 60 + inputSeconds;
 		this.remainingSeconds = totalSeconds;
-		console.log(`${this.remainingSeconds} seconds`); // For testing
+		// console.log(`${this.remainingSeconds} seconds`);
 		return this.remainingSeconds;
 	},
 	start() {
@@ -84,39 +106,46 @@ const countdownTimer = {
 		}
 		if (this.isRunning === true) {
 			return;
-		} else {
-			this.isRunning = true;
-			this.updateDisplay();
-
-			this.intervalId = setInterval(() => {
-				this.updateCountdown();
-			}, 1000);
 		}
+
+		this.isRunning = true;
+		this.updateDisplay();
+
+		this.intervalId = setInterval(() => {
+			this.updateCountdown();
+		}, 1000);
+	},
+	stop() {
+		clearInterval(this.intervalId);
+		this.intervalId = null;
+		this.isRunning = false;
 	},
 	updateCountdown() {
 		if (this.remainingSeconds > 0) {
 			this.remainingSeconds -= 1;
 			this.updateDisplay();
-			console.log(this.remainingSeconds); // For testing
+			// console.log(this.remainingSeconds);
 		}
 		if (this.remainingSeconds <= 0) {
-			clearInterval(this.intervalId);
-			this.isRunning = false;
-			console.log("Timer stopped"); // For testing
+			this.stop();
+			clearInputValues();
+			updatePrimaryButtonState("Start");
+			restoreInterface();
+
+			// console.log("Timer stopped");
 			return;
 		}
 	},
 	pause() {
-		clearInterval(this.intervalId);
-		this.isRunning = false;
-		console.log("Countdown paused"); // For testing
+		this.stop();
+		// console.log("Countdown paused");
 	},
 	reset() {
-		clearInterval(this.intervalId);
+		this.stop();
 		this.remainingSeconds = 0;
 		this.updateDisplay();
-		this.isRunning = false;
-		console.log("Countdown reset"); // For testing
+		clearInputValues();
+		// console.log("Countdown reset");
 	},
 	updateDisplay() {
 		let minutes = Math.trunc(this.remainingSeconds / 60);
@@ -129,36 +158,86 @@ const countdownTimer = {
 
 		const displayTime = formattedMinutes + ":" + formattedSeconds;
 		timerDisplay.textContent = displayTime;
-		console.log(displayTime); // For testing
+		// console.log(displayTime);
 	},
 };
 
 /* ----------------------------------------------------
+	UPDATE PRIMARY BUTTON STATE
+
+	- Changes text content of start button based on
+	  current timer state (start, pause, resume)
+------------------------------------------------------- */
+
+function updatePrimaryButtonState(text) {
+	timerStartButton.textContent = text;
+}
+
+/* ----------------------------------------------------
+	CLEAR INPUT VALUES
+
+	- Resets minutes and seconds input fields to
+	  placeholder state (empty) after timer is stopped
+	  or reset
+------------------------------------------------------- */
+
+function clearInputValues() {
+	timerMinutesInput.value = "";
+	timerSecondsInput.value = "";
+}
+
+/* ----------------------------------------------------
+	RESTORE INTERFACE
+
+	- Restores input field visibility and resets UI to
+	  default state after timer is stopped or reset
+------------------------------------------------------- */
+
+function restoreInterface() {
+	timerInputGroup.classList.remove("hidden");
+}
+
+/* ----------------------------------------------------
 	START BUTTON HANDLER
+
+	- Controls start, pause and resume actions based on
+	  current timer state
+	- Updates UI accordingly (button text and input 
+	  visibility)
 ------------------------------------------------------- */
 
 function handleStartButtonClick() {
 	if (countdownTimer.isRunning === true) {
 		countdownTimer.pause();
-		timerStartButton.textContent = "Resume";
+		updatePrimaryButtonState("Resume");
 	} else {
 		countdownTimer.start();
 		if (countdownTimer.isRunning === true) {
-			timerStartButton.textContent = "Pause";
+			timerInputGroup.classList.add("hidden");
+			updatePrimaryButtonState("Pause");
 		}
 	}
 }
 
 /* ----------------------------------------------------
 	RESET BUTTON HANDLER
+
+	- Restores timer to default state
+	- Clears input values and resets UI
 ------------------------------------------------------- */
 
 function handleResetButtonClick() {
 	countdownTimer.reset();
+	restoreInterface();
+	updatePrimaryButtonState("Start");
 }
 
 /* ----------------------------------------------------
     BUTTON EVENTS
+
+	- Connects start and reset butttons to their
+	  respective handler functions for user click 
+	  interactions
 ------------------------------------------------------- */
 
 timerStartButton.addEventListener("click", handleStartButtonClick);

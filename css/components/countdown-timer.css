@@ -39,10 +39,15 @@
 }
 
 /* Wrapper for timer input fields */
-.timer__field-group {
+.timer__input-group {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+}
+
+/* Hides input fields when timer starts */
+.timer__input-group.hidden {
+	display: none;
 }
 
 /* Container for each label and input pair */

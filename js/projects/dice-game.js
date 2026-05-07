@@ -172,7 +172,7 @@ function resetDiceGame() {
 
 /* ----------------------------------------------------
     GAME HANDLER
-    Handle game flow on button click
+    Handle game logic on button click
 
     - Start game on first click
     - Generate dice roll
