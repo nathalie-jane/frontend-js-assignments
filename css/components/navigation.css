@@ -25,13 +25,6 @@
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Centers last link container */
-.site-nav__item:last-child {
-	grid-column: 1 / -1;
-	width: 12rem;
-	justify-self: center;
-}
-
 /* Link items */
 .site-nav__link {
 	display: block;
